@@ -110,8 +110,8 @@ export default function Home() {
         <div className="section-eyebrow">{t.examples.eyebrow}</div>
         <h2 className="section-title">{t.examples.title}</h2>
         <div className="examples">
-          {t.examples.items.map((ex, i) => (
-            <div key={ex.tool + i} className="example">
+          {t.examples.items.map((ex) => (
+            <div key={ex.q} className="example">
               <div className="example-avatar">Q</div>
               <div>
                 <div className="example-q">&ldquo;{ex.q}&rdquo;</div>
