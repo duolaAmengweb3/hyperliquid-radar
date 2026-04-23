@@ -1,12 +1,21 @@
 # hyperliquid-radar
 
+**Website**: https://hyperliquid-radar.vercel.app
+
 The agent-native intelligence terminal for Hyperliquid.
 
 Ask Claude / Cursor / Eliza anything about HL — liquidation risks, whale flows,
 funding divergence, market narrative, wallet alerts. No more tab-switching to
 Hyperdash.
 
-**Status**: scaffolding stage. 1/23 tools implemented. See [PRD.md](./PRD.md) for the full spec.
+**Status**: 5/23 tools implemented. See [PRD.md](./PRD.md) for the full spec.
+
+**Ready now**:
+- `get_top_liquidation_risks` — scan a list of HL wallet addresses, rank by proximity to liq
+- `get_funding_divergence` — HL vs Binance / Bybit / OKX funding for any asset
+- `asset_snapshot` — one-call overview: price, funding, OI, 24h volume, impact prices
+- `get_all_asset_ctxs` — full perp universe, sortable by volume / funding / OI / 24h change
+- `hlp_metrics` — HLP vault APR, TVL, follower count, deposit status
 
 ## Install
 

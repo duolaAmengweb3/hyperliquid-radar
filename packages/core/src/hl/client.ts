@@ -9,10 +9,65 @@ export type HLInfoRequest =
   | { type: "userFills"; user: string }
   | { type: "userFunding"; user: string; startTime: number }
   | { type: "l2Book"; coin: string }
+  | { type: "vaultDetails"; vaultAddress: string }
   | {
       type: "candleSnapshot";
       req: { coin: string; interval: string; startTime: number; endTime: number };
     };
+
+export interface HLAssetMeta {
+  /** Asset name, e.g. "BTC". */
+  name: string;
+  /** Perp sizes are rounded to this many decimals. */
+  szDecimals: number;
+  /** Max leverage allowed for this asset. */
+  maxLeverage: number;
+  /** If present and true, asset is only live on testnet or delisted etc. */
+  onlyIsolated?: boolean;
+}
+
+export interface HLAssetCtx {
+  /** Hourly funding rate (string). Multiply by 8 for 8h or 24 for 24h. */
+  funding: string;
+  /** Open interest in base units (not USD). */
+  openInterest: string;
+  /** 24h volume in USD. */
+  dayNtlVlm: string;
+  /** Current mid price. */
+  midPx: string | null;
+  /** Current mark price. */
+  markPx: string;
+  /** Premium (mark - index) / index. */
+  premium: string | null;
+  /** Index price (spot reference). */
+  oraclePx: string;
+  /** Previous day's close. */
+  prevDayPx: string;
+  /** Impact prices for a few standard sizes — used for depth estimate. */
+  impactPxs?: [string, string] | null;
+}
+
+export type HLMetaAndAssetCtxs = [{ universe: HLAssetMeta[] }, HLAssetCtx[]];
+
+export interface HLVaultDetails {
+  name: string;
+  vaultAddress: string;
+  leader: string;
+  description: string;
+  portfolio: unknown;
+  apr: number;
+  followerState: unknown | null;
+  leaderFraction: number;
+  leaderCommission: number;
+  followers: Array<{ user: string; vaultEquity: string; pnl: string; allTimePnl: string }>;
+  maxDistributable: number;
+  maxWithdrawable: number;
+  /** Total vault equity in USDC. */
+  isClosed: boolean;
+  relationship: { type: string };
+  allowDeposits: boolean;
+  alwaysCloseOnWithdraw: boolean;
+}
 
 export interface HLAssetPosition {
   position: {
@@ -96,4 +151,20 @@ export class HLClient {
       user,
     });
   }
+
+  getMetaAndAssetCtxs(): Promise<HLMetaAndAssetCtxs> {
+    return this.info<HLMetaAndAssetCtxs>({ type: "metaAndAssetCtxs" });
+  }
+
+  getVaultDetails(vaultAddress: string): Promise<HLVaultDetails> {
+    return this.info<HLVaultDetails>({ type: "vaultDetails", vaultAddress });
+  }
 }
+
+/**
+ * Well-known HL public vault addresses.
+ * HLP is the main Hyperliquidity Provider vault.
+ */
+export const HL_VAULTS = {
+  HLP: "0xdfc24b077bc1425ad1dea75bcb6f8158e10df303",
+} as const;

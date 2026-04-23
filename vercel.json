@@ -1,0 +1,8 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "buildCommand": "pnpm --filter @cexagent/landing build",
+  "installCommand": "pnpm install",
+  "outputDirectory": "apps/landing/.next",
+  "framework": "nextjs",
+  "ignoreCommand": "git diff HEAD^ HEAD --quiet -- apps/landing packages pnpm-workspace.yaml pnpm-lock.yaml package.json"
+}
