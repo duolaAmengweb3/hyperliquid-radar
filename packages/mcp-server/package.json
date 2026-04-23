@@ -1,0 +1,52 @@
+{
+  "name": "@cexagent/hyperliquid-radar",
+  "version": "0.1.0",
+  "description": "Agent-native intelligence terminal for Hyperliquid — stdio MCP server",
+  "license": "MIT",
+  "keywords": [
+    "mcp",
+    "hyperliquid",
+    "cexagent",
+    "claude",
+    "cursor",
+    "trading",
+    "agent",
+    "perp",
+    "defi"
+  ],
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "bin": {
+    "hyperliquid-radar": "./dist/index.js"
+  },
+  "files": ["dist", "README.md"],
+  "scripts": {
+    "build": "tsc -p tsconfig.json && chmod +x dist/index.js",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "vitest run",
+    "start": "node dist/index.js"
+  },
+  "dependencies": {
+    "@cexagent/core": "workspace:*",
+    "@modelcontextprotocol/sdk": "^1.0.4",
+    "zod": "^3.24.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.2",
+    "typescript": "^5.7.2",
+    "vitest": "^2.1.8"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cexagent/hyperliquid-radar.git"
+  },
+  "homepage": "https://hyperliquid-radar.com",
+  "bugs": "https://github.com/cexagent/hyperliquid-radar/issues"
+}

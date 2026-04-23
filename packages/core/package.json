@@ -1,0 +1,41 @@
+{
+  "name": "@cexagent/core",
+  "version": "0.1.0",
+  "description": "Shared HL / CEX data clients, cache, and types for cexagent products",
+  "license": "MIT",
+  "private": true,
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./hl": {
+      "types": "./dist/hl/index.d.ts",
+      "default": "./dist/hl/index.js"
+    },
+    "./cex": {
+      "types": "./dist/cex/index.d.ts",
+      "default": "./dist/cex/index.js"
+    }
+  },
+  "files": ["dist"],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "vitest run",
+    "dev": "tsc -p tsconfig.json --watch"
+  },
+  "dependencies": {
+    "lru-cache": "^11.0.2",
+    "undici": "^7.2.0",
+    "zod": "^3.24.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.2",
+    "typescript": "^5.7.2",
+    "vitest": "^2.1.8"
+  }
+}
