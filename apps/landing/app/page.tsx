@@ -149,10 +149,18 @@ export default function Home() {
             <div className="install-path">
               <span className="mono">{t.install.path}</span>
             </div>
-            <CodeBlock code={CLAUDE_DESKTOP_CONFIG} copyLabel={t.install.copy} copiedLabel={t.install.copied} />
+            <CodeBlock
+              code={CLAUDE_DESKTOP_CONFIG}
+              copyLabel={t.install.copy}
+              copiedLabel={t.install.copied}
+            />
           </>
         ) : (
-          <CodeBlock code={CURSOR_CONFIG} copyLabel={t.install.copy} copiedLabel={t.install.copied} />
+          <CodeBlock
+            code={CURSOR_CONFIG}
+            copyLabel={t.install.copy}
+            copiedLabel={t.install.copied}
+          />
         )}
       </section>
 
@@ -214,11 +222,7 @@ function CodeBlock({
       <pre>
         <code>{code}</code>
       </pre>
-      <button
-        type="button"
-        className={`copy-btn ${copied ? "copied" : ""}`}
-        onClick={copy}
-      >
+      <button type="button" className={`copy-btn ${copied ? "copied" : ""}`} onClick={copy}>
         {copied ? copiedLabel : copyLabel}
       </button>
     </div>

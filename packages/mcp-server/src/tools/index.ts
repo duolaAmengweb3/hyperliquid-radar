@@ -2,6 +2,7 @@ import { getAllAssetCtxsTool, handleGetAllAssetCtxs } from "./getAllAssetCtxs.js
 import { getAssetSnapshotTool, handleGetAssetSnapshot } from "./getAssetSnapshot.js";
 import { getFundingDivergenceTool, handleGetFundingDivergence } from "./getFundingDivergence.js";
 import { getHlpMetricsTool, handleGetHlpMetrics } from "./getHlpMetrics.js";
+import { getOrderbookImbalanceTool, handleGetOrderbookImbalance } from "./getOrderbookImbalance.js";
 import {
   getTopLiquidationRisksTool,
   handleGetTopLiquidationRisks,
@@ -21,6 +22,7 @@ export const tools: ToolDef[] = [
   getAssetSnapshotTool,
   getAllAssetCtxsTool,
   getHlpMetricsTool,
+  getOrderbookImbalanceTool,
 ];
 
 export const toolHandlers: Record<string, ToolHandler> = {
@@ -29,4 +31,5 @@ export const toolHandlers: Record<string, ToolHandler> = {
   [getAssetSnapshotTool.name]: handleGetAssetSnapshot,
   [getAllAssetCtxsTool.name]: handleGetAllAssetCtxs,
   [getHlpMetricsTool.name]: handleGetHlpMetrics,
+  [getOrderbookImbalanceTool.name]: handleGetOrderbookImbalance,
 };

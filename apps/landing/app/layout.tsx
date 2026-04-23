@@ -7,8 +7,7 @@ export const metadata: Metadata = {
     "Ask Claude / Cursor / Eliza anything about Hyperliquid — liquidation risks, funding divergence, whale flows, market structure. Open source, MIT, zero user data.",
   openGraph: {
     title: "hyperliquid-radar",
-    description:
-      "The agent-native intelligence terminal for Hyperliquid. Part of cexagent.",
+    description: "The agent-native intelligence terminal for Hyperliquid. Part of cexagent.",
     type: "website",
   },
 };

@@ -11,3 +11,5 @@ dist/
 coverage/
 *.tsbuildinfo
 .pnpm-store/
+.vercel
+.env*.local

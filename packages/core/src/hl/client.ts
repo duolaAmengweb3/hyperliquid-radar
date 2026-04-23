@@ -49,6 +49,22 @@ export interface HLAssetCtx {
 
 export type HLMetaAndAssetCtxs = [{ universe: HLAssetMeta[] }, HLAssetCtx[]];
 
+export interface HLL2Level {
+  /** Price as string. */
+  px: string;
+  /** Size as string. */
+  sz: string;
+  /** Number of orders at this level. */
+  n: number;
+}
+
+export interface HLL2Book {
+  coin: string;
+  time: number;
+  /** [bids (descending px), asks (ascending px)]. */
+  levels: [HLL2Level[], HLL2Level[]];
+}
+
 export interface HLVaultDetails {
   name: string;
   vaultAddress: string;
@@ -158,6 +174,10 @@ export class HLClient {
 
   getVaultDetails(vaultAddress: string): Promise<HLVaultDetails> {
     return this.info<HLVaultDetails>({ type: "vaultDetails", vaultAddress });
+  }
+
+  getL2Book(coin: string): Promise<HLL2Book> {
+    return this.info<HLL2Book>({ type: "l2Book", coin });
   }
 }
 

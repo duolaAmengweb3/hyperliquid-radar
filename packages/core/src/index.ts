@@ -10,6 +10,8 @@ export {
   type HLClearinghouseState,
   type HLClientOptions,
   type HLInfoRequest,
+  type HLL2Book,
+  type HLL2Level,
   type HLMetaAndAssetCtxs,
   type HLVaultDetails,
 } from "./hl/client.js";
