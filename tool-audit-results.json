@@ -1,0 +1,3236 @@
+{
+  "context": {
+    "chosen_address": "0x0b8aa35c28b7c6ab18f11dc168f437a8a69fd4f8",
+    "chosen_asset": "HYPE",
+    "compare_assets": [
+      "BTC",
+      "ETH",
+      "HYPE"
+    ],
+    "audited_at": "2026-04-24T16:01:35.035Z"
+  },
+  "results": [
+    {
+      "tool": "get_top_liquidation_risks",
+      "pass": true,
+      "args": {
+        "n": 10,
+        "asset": "HYPE"
+      },
+      "duration_ms": 1825,
+      "shape_notes": "top-level keys: queried_addresses, successful_queries, total_positions_found, returned, positions",
+      "realism_notes": "Scanned 60/60; found 17 positions.",
+      "broken_or_confusing_behavior": "",
+      "preview": "object{queried_addresses, successful_queries, total_positions_found, returned, positions}",
+      "result": {
+        "queried_addresses": 60,
+        "successful_queries": 60,
+        "total_positions_found": 17,
+        "returned": 10,
+        "positions": [
+          {
+            "address": "0x880ac484a1743862989a441d6d867238c7aa311c",
+            "asset": "HYPE",
+            "side": "short",
+            "size_usd": 11736020.2661,
+            "leverage": 5,
+            "entry_price": 37.6126,
+            "liq_price": 52.5461139099,
+            "current_price": 41.192,
+            "distance_to_liq_pct": 27.5639,
+            "unrealized_pnl_usd": -1019528.045786
+          },
+          {
+            "address": "0x0b8aa35c28b7c6ab18f11dc168f437a8a69fd4f8",
+            "asset": "HYPE",
+            "side": "short",
+            "size_usd": 4119305.955,
+            "leverage": 10,
+            "entry_price": 32.4618,
+            "liq_price": 57.9726509212,
+            "current_price": 41.192,
+            "distance_to_liq_pct": 40.7376,
+            "unrealized_pnl_usd": -872961.85541
+          },
+          {
+            "address": "0x48d826da83e69844f2f84b2db50703a933d137a2",
+            "asset": "HYPE",
+            "side": "short",
+            "size_usd": 7439022.10384,
+            "leverage": 5,
+            "entry_price": 34.8165,
+            "liq_price": 59.4759944484,
+            "current_price": 41.192,
+            "distance_to_liq_pct": 44.3872,
+            "unrealized_pnl_usd": -1151219.906119
+          },
+          {
+            "address": "0x939f95036d2e7b6d7419ec072bf9d967352204d2",
+            "asset": "HYPE",
+            "side": "short",
+            "size_usd": 22801875.3195,
+            "leverage": 5,
+            "entry_price": 38.9473,
+            "liq_price": 65.2692146885,
+            "current_price": 41.192,
+            "distance_to_liq_pct": 58.4512,
+            "unrealized_pnl_usd": -1242025.085062
+          },
+          {
+            "address": "0xcac19662ec88d23fa1c81ac0e8570b0cf2ff26b3",
+            "asset": "HYPE",
+            "side": "short",
+            "size_usd": 6342992.61607,
+            "leverage": 10,
+            "entry_price": 33.5875,
+            "liq_price": 68.7382705281,
+            "current_price": 41.192,
+            "distance_to_liq_pct": 66.8729,
+            "unrealized_pnl_usd": -1170849.110232
+          },
+          {
+            "address": "0x45d26f28196d226497130c4bac709d808fed4029",
+            "asset": "HYPE",
+            "side": "short",
+            "size_usd": 19119214.56,
+            "leverage": 10,
+            "entry_price": 28.7925,
+            "liq_price": 73.016182436,
+            "current_price": 41.192,
+            "distance_to_liq_pct": 77.2582,
+            "unrealized_pnl_usd": -5754867.622055
+          },
+          {
+            "address": "0x469e9a7f624b04c24f0e64edf8d8a277e6bf58a5",
+            "asset": "HYPE",
+            "side": "short",
+            "size_usd": 8238200,
+            "leverage": 10,
+            "entry_price": 35.4072,
+            "liq_price": 75.9060545559,
+            "current_price": 41.192,
+            "distance_to_liq_pct": 84.2738,
+            "unrealized_pnl_usd": -1156745.913778
+          },
+          {
+            "address": "0x5b5d51203a0f9079f8aeb098a6523a13f298c060",
+            "asset": "HYPE",
+            "side": "short",
+            "size_usd": 4247247.67246,
+            "leverage": 5,
+            "entry_price": 41.4289,
+            "liq_price": 82.4036904489,
+            "current_price": 41.192,
+            "distance_to_liq_pct": 100.0478,
+            "unrealized_pnl_usd": 24533.390024
+          },
+          {
+            "address": "0x7fdafde5cfb5465924316eced2d3715494c517d1",
+            "asset": "HYPE",
+            "side": "short",
+            "size_usd": 11815284.1074,
+            "leverage": 5,
+            "entry_price": 38.5199,
+            "liq_price": 89.0345465764,
+            "current_price": 41.192,
+            "distance_to_liq_pct": 116.1452,
+            "unrealized_pnl_usd": -766169.453443
+          },
+          {
+            "address": "0xd47587702a91731dc1089b5db0932cf820151a91",
+            "asset": "HYPE",
+            "side": "short",
+            "size_usd": 7775476.7824,
+            "leverage": 5,
+            "entry_price": 36.9182,
+            "liq_price": 98.0205825953,
+            "current_price": 41.192,
+            "distance_to_liq_pct": 137.9602,
+            "unrealized_pnl_usd": -806547.783618
+          }
+        ]
+      }
+    },
+    {
+      "tool": "liquidation_heatmap",
+      "pass": true,
+      "args": {
+        "asset": "HYPE",
+        "bucket_pct": 0.5,
+        "range_pct": 15
+      },
+      "duration_ms": 2085,
+      "shape_notes": "top-level keys: asset, current_price, bucket_pct, range_pct, addresses_scanned, total_long_usd, total_short_usd, buckets, note",
+      "realism_notes": "Scanned 60 addresses, 0 buckets.",
+      "broken_or_confusing_behavior": "",
+      "preview": "object{asset, current_price, bucket_pct, range_pct, addresses_scanned, total_long_usd, total_short_usd, buckets, note}",
+      "result": {
+        "asset": "HYPE",
+        "current_price": 41.194,
+        "bucket_pct": 0.5,
+        "range_pct": 15,
+        "addresses_scanned": 60,
+        "total_long_usd": 0,
+        "total_short_usd": 0,
+        "buckets": [],
+        "note": "Scans only provided addresses. HL has no 'all positions' endpoint — pass more addresses for better coverage."
+      }
+    },
+    {
+      "tool": "simulate_cascade",
+      "pass": true,
+      "args": {
+        "asset": "HYPE",
+        "stress_pct": -5
+      },
+      "duration_ms": 1072,
+      "shape_notes": "top-level keys: asset, current_price, stress_pct, trigger_price, final_price_estimate, total_liq_usd, waves, top_losers, addresses_scanned, disclaimer",
+      "realism_notes": "Trigger 39.1276, final 39.1276, liq $0.",
+      "broken_or_confusing_behavior": "",
+      "preview": "object{asset, current_price, stress_pct, trigger_price, final_price_estimate, total_liq_usd, waves, top_losers, addresses_scanned, disclaimer}",
+      "result": {
+        "asset": "HYPE",
+        "current_price": 41.187,
+        "stress_pct": -5,
+        "trigger_price": 39.1276,
+        "final_price_estimate": 39.1276,
+        "total_liq_usd": 0,
+        "waves": [
+          {
+            "wave": 1,
+            "price": 39.1276,
+            "price_impact_pct": 0,
+            "additional_liq_usd": 0,
+            "positions_wiped": 0
+          }
+        ],
+        "top_losers": [],
+        "addresses_scanned": 60,
+        "disclaimer": "Estimate. Assumes all liquidation flow is absorbed by current bid-side depth with linear impact. Real markets exhibit non-linear dynamics, makers pull, and CEX flow arbitrages."
+      }
+    },
+    {
+      "tool": "my_position_risk",
+      "pass": true,
+      "args": {
+        "address": "0x0b8aa35c28b7c6ab18f11dc168f437a8a69fd4f8"
+      },
+      "duration_ms": 191,
+      "shape_notes": "top-level keys: address, account_value_usd, total_margin_used_usd, withdrawable_usd, position_count, positions, at_risk_count, warnings",
+      "realism_notes": "Address has 1 open positions; 0 flagged near liq.",
+      "broken_or_confusing_behavior": "",
+      "preview": "object{address, account_value_usd, total_margin_used_usd, withdrawable_usd, position_count, positions, at_risk_count, warnings}",
+      "result": {
+        "address": "0x0b8aa35c28b7c6ab18f11dc168f437a8a69fd4f8",
+        "account_value_usd": 371775.695721,
+        "total_margin_used_usd": 411900.594,
+        "withdrawable_usd": 0,
+        "position_count": 1,
+        "positions": [
+          {
+            "asset": "HYPE",
+            "side": "short",
+            "size_usd": 4119005.94,
+            "leverage": 10,
+            "entry_price": 32.4618,
+            "current_price": 41.1835,
+            "liq_price": 57.9726509212,
+            "distance_to_liq_pct": 40.7667,
+            "unrealized_pnl_usd": -872661.84041,
+            "margin_used_usd": 411900.594,
+            "danger": false
+          }
+        ],
+        "at_risk_count": 0,
+        "warnings": []
+      }
+    },
+    {
+      "tool": "simulate_my_liq_price",
+      "pass": true,
+      "args": {
+        "address": "0x0b8aa35c28b7c6ab18f11dc168f437a8a69fd4f8",
+        "asset": "HYPE",
+        "delta_size_usd": 10000
+      },
+      "duration_ms": 145,
+      "shape_notes": "top-level keys: address, asset, side, current_mark_price, current_size_usd, current_liq_price, current_distance_to_liq_pct, delta_size_usd, projected_size_usd, projected_leverage, projected_liq_price, projected_distance_to_liq_pct",
+      "realism_notes": "Projected liq 33.7616, leverage 11.1062.",
+      "broken_or_confusing_behavior": "",
+      "preview": "object{address, asset, side, current_mark_price, current_size_usd, current_liq_price, current_distance_to_liq_pct, delta_size_usd, projected_size_usd, projected_leverage, projected_liq_price, projected_distance_to_liq_pct}",
+      "result": {
+        "address": "0x0b8aa35c28b7c6ab18f11dc168f437a8a69fd4f8",
+        "asset": "HYPE",
+        "side": "short",
+        "current_mark_price": 41.1895,
+        "current_size_usd": 4119005.94,
+        "current_liq_price": 57.9726509212,
+        "current_distance_to_liq_pct": 40.7462,
+        "delta_size_usd": 10000,
+        "projected_size_usd": 4129005.94,
+        "projected_leverage": 11.1062,
+        "projected_liq_price": 33.7616,
+        "projected_distance_to_liq_pct": -18.0336,
+        "account_value_usd": 371775.695721,
+        "disclaimer": "Approximation. Uses simplified maintenance margin formula. Real HL liq price depends on cross/isolated mode, borrow interest, cross-asset PnL. Confirm in HL UI before risking capital."
+      }
+    },
+    {
+      "tool": "get_recent_liquidations",
+      "pass": true,
+      "args": {
+        "hours": 24,
+        "min_size_usd": 10000
+      },
+      "duration_ms": 3567,
+      "shape_notes": "top-level keys: addresses_scanned, successful, seed_mode, hours, min_size_usd, total_liquidations, liquidations",
+      "realism_notes": "Found 7 liquidations in 24h scan.",
+      "broken_or_confusing_behavior": "",
+      "preview": "object{addresses_scanned, successful, seed_mode, hours, min_size_usd, total_liquidations, liquidations}",
+      "result": {
+        "addresses_scanned": 60,
+        "successful": 35,
+        "seed_mode": true,
+        "hours": 24,
+        "min_size_usd": 10000,
+        "total_liquidations": 7,
+        "liquidations": [
+          {
+            "time": "2026-04-24T11:22:24.258Z",
+            "address": "0xb581d667c53fd8a50bf7ffd817be0e62daa16f4f",
+            "asset": "xyz:BRENTOIL",
+            "side": "close_short",
+            "size": 101.78,
+            "price": 98.5,
+            "size_usd": 10025.33,
+            "closed_pnl_usd": 0,
+            "mark_px": 98.431
+          },
+          {
+            "time": "2026-04-23T17:40:45.507Z",
+            "address": "0x004edcd40360e293e4cf260d2ebdf8c7076c1bb8",
+            "asset": "BTC",
+            "side": "close_short",
+            "size": 1.33211,
+            "price": 77000,
+            "size_usd": 102572.47,
+            "closed_pnl_usd": 1420.162471,
+            "mark_px": 76995
+          },
+          {
+            "time": "2026-04-23T17:40:42.603Z",
+            "address": "0x004edcd40360e293e4cf260d2ebdf8c7076c1bb8",
+            "asset": "BTC",
+            "side": "close_short",
+            "size": 0.33302,
+            "price": 77000,
+            "size_usd": 25642.54,
+            "closed_pnl_usd": 355.032622,
+            "mark_px": 77000
+          },
+          {
+            "time": "2026-04-23T17:40:42.603Z",
+            "address": "0x004edcd40360e293e4cf260d2ebdf8c7076c1bb8",
+            "asset": "BTC",
+            "side": "close_short",
+            "size": 1.24719,
+            "price": 77000,
+            "size_usd": 96033.63,
+            "closed_pnl_usd": 1329.629259,
+            "mark_px": 77000
+          },
+          {
+            "time": "2026-04-23T17:40:33.558Z",
+            "address": "0x004edcd40360e293e4cf260d2ebdf8c7076c1bb8",
+            "asset": "BTC",
+            "side": "close_short",
+            "size": 41.79342,
+            "price": 77000,
+            "size_usd": 3218093.34,
+            "closed_pnl_usd": 44555.9650620002,
+            "mark_px": 77015
+          },
+          {
+            "time": "2026-04-23T17:40:30.671Z",
+            "address": "0x004edcd40360e293e4cf260d2ebdf8c7076c1bb8",
+            "asset": "BTC",
+            "side": "close_short",
+            "size": 10.36866,
+            "price": 77000,
+            "size_usd": 798386.82,
+            "closed_pnl_usd": 11054.0284260001,
+            "mark_px": 77028
+          },
+          {
+            "time": "2026-04-23T17:40:30.671Z",
+            "address": "0x004edcd40360e293e4cf260d2ebdf8c7076c1bb8",
+            "asset": "BTC",
+            "side": "close_short",
+            "size": 2,
+            "price": 77000,
+            "size_usd": 154000,
+            "closed_pnl_usd": 2132.2,
+            "mark_px": 77028
+          }
+        ]
+      }
+    },
+    {
+      "tool": "whale_pnl_leaderboard",
+      "pass": true,
+      "args": {
+        "window": "week",
+        "sort_by": "pnl",
+        "limit": 10
+      },
+      "duration_ms": 12821,
+      "shape_notes": "top-level keys: window, sort_by, total, returned, top_traders, note",
+      "realism_notes": "Top row 0x0b8aa3… account $19583401.926141, pnl $3113048.454878.",
+      "broken_or_confusing_behavior": "",
+      "preview": "object{window, sort_by, total, returned, top_traders, note}",
+      "result": {
+        "window": "week",
+        "sort_by": "pnl",
+        "total": 34684,
+        "returned": 10,
+        "top_traders": [
+          {
+            "address": "0x0b8aa35c28b7c6ab18f11dc168f437a8a69fd4f8",
+            "display_name": null,
+            "account_value_usd": 19583401.926141,
+            "pnl_usd": 3113048.454878,
+            "roi_pct": 48.44166233,
+            "volume_usd": 88115539.11000001,
+            "rank": 1
+          },
+          {
+            "address": "0xb581d667c53fd8a50bf7ffd817be0e62daa16f4f",
+            "display_name": null,
+            "account_value_usd": 19376151.77851,
+            "pnl_usd": 2855410.850013,
+            "roi_pct": 17.28379413,
+            "volume_usd": 46247888.15,
+            "rank": 2
+          },
+          {
+            "address": "0xd47587702a91731dc1089b5db0932cf820151a91",
+            "display_name": null,
+            "account_value_usd": 48692675.793339,
+            "pnl_usd": 2779633.461298,
+            "roi_pct": 8.43499161,
+            "volume_usd": 26196568.09,
+            "rank": 3
+          },
+          {
+            "address": "0x939f95036d2e7b6d7419ec072bf9d967352204d2",
+            "display_name": null,
+            "account_value_usd": 39050126.384605,
+            "pnl_usd": 2512532.17317,
+            "roi_pct": 18.00481331,
+            "volume_usd": 0,
+            "rank": 4
+          },
+          {
+            "address": "0x1e48f1007fa133f643941d58cb6b080dc621e773",
+            "display_name": null,
+            "account_value_usd": 8663442.296912,
+            "pnl_usd": 2492132.663428,
+            "roi_pct": 40.38600282,
+            "volume_usd": 7025013.25,
+            "rank": 5
+          },
+          {
+            "address": "0x023a3d058020fb76cca98f01b3c48c8938a22355",
+            "display_name": "Auros",
+            "account_value_usd": 40822240.379381,
+            "pnl_usd": 2443117.20983,
+            "roi_pct": 10.35733698,
+            "volume_usd": 715433329.68,
+            "rank": 6
+          },
+          {
+            "address": "0x0c5e5e6554b54d1445c3247ce620c400b8033dd4",
+            "display_name": null,
+            "account_value_usd": 4411147.492121,
+            "pnl_usd": 2220325.758336,
+            "roi_pct": 101.34671042000001,
+            "volume_usd": 0,
+            "rank": 7
+          },
+          {
+            "address": "0x0ddf9bae2af4b874b96d287a5ad42eb47138a902",
+            "display_name": "Penision Fund",
+            "account_value_usd": 25158957.66429,
+            "pnl_usd": 2196184.993051,
+            "roi_pct": 9.73844211,
+            "volume_usd": 0,
+            "rank": 8
+          },
+          {
+            "address": "0xecb63caa47c7c4e77f60f1ce858cf28dc2b82b00",
+            "display_name": null,
+            "account_value_usd": 67401743.005589,
+            "pnl_usd": 2172323.552316,
+            "roi_pct": 5.74802848,
+            "volume_usd": 2140868689.44,
+            "rank": 9
+          },
+          {
+            "address": "0x469e9a7f624b04c24f0e64edf8d8a277e6bf58a5",
+            "display_name": null,
+            "account_value_usd": 13241536.879023,
+            "pnl_usd": 1895886.106864,
+            "roi_pct": 30.550115350000002,
+            "volume_usd": 141531687.11,
+            "rank": 10
+          }
+        ],
+        "note": "Live HL public leaderboard via stats-data.hyperliquid.xyz. Addresses listed here can be passed into get_whale_flows / smart_money_flow / address_position_history for deeper analysis."
+      }
+    },
+    {
+      "tool": "get_whale_flows",
+      "pass": true,
+      "args": {
+        "hours": 24,
+        "min_size_usd": 250000
+      },
+      "duration_ms": 7744,
+      "shape_notes": "top-level keys: addresses_scanned, successful, hours, min_size_usd, total_flows, flows",
+      "realism_notes": "Found 150 flows over $250000.",
+      "broken_or_confusing_behavior": "",
+      "preview": "object{addresses_scanned, successful, hours, min_size_usd, total_flows, flows}",
+      "result": {
+        "addresses_scanned": 60,
+        "successful": 38,
+        "hours": 24,
+        "min_size_usd": 250000,
+        "total_flows": 150,
+        "flows": [
+          {
+            "time": "2026-04-24T15:45:22.790Z",
+            "address": "0xecb63caa47c7c4e77f60f1ce858cf28dc2b82b00",
+            "asset": "BTC",
+            "side": "sell",
+            "size": 6.39529,
+            "price": 78157,
+            "size_usd": 499836.68,
+            "closed_pnl_usd": 0,
+            "dir": "Open Short"
+          },
+          {
+            "time": "2026-04-24T15:45:22.790Z",
+            "address": "0xecb63caa47c7c4e77f60f1ce858cf28dc2b82b00",
+            "asset": "BTC",
+            "side": "sell",
+            "size": 6.39401,
+            "price": 78173,
+            "size_usd": 499838.94,
+            "closed_pnl_usd": 0,
+            "dir": "Open Short"
+          },
+          {
+            "time": "2026-04-24T15:45:17.393Z",
+            "address": "0xecb63caa47c7c4e77f60f1ce858cf28dc2b82b00",
+            "asset": "BTC",
+            "side": "sell",
+            "size": 6.00597,
+            "price": 78143,
+            "size_usd": 469324.51,
+            "closed_pnl_usd": 0,
+            "dir": "Open Short"
+          },
+          {
+            "time": "2026-04-24T15:44:53.438Z",
+            "address": "0xb581d667c53fd8a50bf7ffd817be0e62daa16f4f",
+            "asset": "xyz:BRENTOIL",
+            "side": "buy",
+            "size": 5451.86,
+            "price": 98.8,
+            "size_usd": 538643.77,
+            "closed_pnl_usd": 0,
+            "dir": "Open Long"
+          },
+          {
+            "time": "2026-04-24T13:47:20.041Z",
+            "address": "0x61ceef212ff4a86933c69fb6aca2fe35d8f2a62b",
+            "asset": "BTC",
+            "side": "sell",
+            "size": 4.69242,
+            "price": 78141,
+            "size_usd": 366670.39,
+            "closed_pnl_usd": 1127.119284,
+            "dir": "Close Long"
+          },
+          {
+            "time": "2026-04-24T13:47:20.041Z",
+            "address": "0x61ceef212ff4a86933c69fb6aca2fe35d8f2a62b",
+            "asset": "BTC",
+            "side": "sell",
+            "size": 7.71985,
+            "price": 78140,
+            "size_usd": 603229.08,
+            "closed_pnl_usd": 1846.58812,
+            "dir": "Close Long"
+          },
+          {
+            "time": "2026-04-24T13:47:20.041Z",
+            "address": "0x61ceef212ff4a86933c69fb6aca2fe35d8f2a62b",
+            "asset": "BTC",
+            "side": "sell",
+            "size": 7.71985,
+            "price": 78140,
+            "size_usd": 603229.08,
+            "closed_pnl_usd": 1846.58812,
+            "dir": "Close Long"
+          },
+          {
+            "time": "2026-04-24T13:47:20.041Z",
+            "address": "0x61ceef212ff4a86933c69fb6aca2fe35d8f2a62b",
+            "asset": "BTC",
+            "side": "sell",
+            "size": 4.59328,
+            "price": 78135,
+            "size_usd": 358895.93,
+            "closed_pnl_usd": 1075.746176,
+            "dir": "Close Long"
+          },
+          {
+            "time": "2026-04-24T13:47:20.041Z",
+            "address": "0x61ceef212ff4a86933c69fb6aca2fe35d8f2a62b",
+            "asset": "BTC",
+            "side": "sell",
+            "size": 7.71985,
+            "price": 78135,
+            "size_usd": 603190.48,
+            "closed_pnl_usd": 1807.98887,
+            "dir": "Close Long"
+          },
+          {
+            "time": "2026-04-24T13:47:20.041Z",
+            "address": "0x61ceef212ff4a86933c69fb6aca2fe35d8f2a62b",
+            "asset": "BTC",
+            "side": "sell",
+            "size": 4.59328,
+            "price": 78131,
+            "size_usd": 358877.56,
+            "closed_pnl_usd": 1057.373056,
+            "dir": "Close Long"
+          },
+          {
+            "time": "2026-04-24T13:47:20.041Z",
+            "address": "0x61ceef212ff4a86933c69fb6aca2fe35d8f2a62b",
+            "asset": "BTC",
+            "side": "sell",
+            "size": 7.71985,
+            "price": 78130,
+            "size_usd": 603151.88,
+            "closed_pnl_usd": 1769.38962,
+            "dir": "Close Long"
+          },
+          {
+            "time": "2026-04-24T13:47:20.041Z",
+            "address": "0x61ceef212ff4a86933c69fb6aca2fe35d8f2a62b",
+            "asset": "BTC",
+            "side": "sell",
+            "size": 4.65529,
+            "price": 78130,
+            "size_usd": 363717.81,
+            "closed_pnl_usd": 1066.992468,
+            "dir": "Close Long"
+          },
+          {
+            "time": "2026-04-24T13:47:20.041Z",
+            "address": "0x61ceef212ff4a86933c69fb6aca2fe35d8f2a62b",
+            "asset": "BTC",
+            "side": "sell",
+            "size": 4.59328,
+            "price": 78125,
+            "size_usd": 358850,
+            "closed_pnl_usd": 1029.813376,
+            "dir": "Close Long"
+          },
+          {
+            "time": "2026-04-24T13:47:20.041Z",
+            "address": "0x61ceef212ff4a86933c69fb6aca2fe35d8f2a62b",
+            "asset": "BTC",
+            "side": "sell",
+            "size": 4.59328,
+            "price": 78121,
+            "size_usd": 358831.63,
+            "closed_pnl_usd": 1011.440256,
+            "dir": "Close Long"
+          },
+          {
+            "time": "2026-04-24T13:47:20.041Z",
+            "address": "0x61ceef212ff4a86933c69fb6aca2fe35d8f2a62b",
+            "asset": "BTC",
+            "side": "sell",
+            "size": 4.59328,
+            "price": 78117,
+            "size_usd": 358813.25,
+            "closed_pnl_usd": 993.067136,
+            "dir": "Close Long"
+          },
+          {
+            "time": "2026-04-24T13:47:20.041Z",
+            "address": "0x61ceef212ff4a86933c69fb6aca2fe35d8f2a62b",
+            "asset": "BTC",
+            "side": "sell",
+            "size": 4.59328,
+            "price": 78113,
+            "size_usd": 358794.88,
+            "closed_pnl_usd": 974.694016,
+            "dir": "Close Long"
+          },
+          {
+            "time": "2026-04-24T13:47:20.041Z",
+            "address": "0x61ceef212ff4a86933c69fb6aca2fe35d8f2a62b",
+            "asset": "BTC",
+            "side": "sell",
+            "size": 6.39934,
+            "price": 78110,
+            "size_usd": 499852.45,
+            "closed_pnl_usd": 1338.741928,
+            "dir": "Close Long"
+          },
+          {
+            "time": "2026-04-24T13:47:20.041Z",
+            "address": "0x61ceef212ff4a86933c69fb6aca2fe35d8f2a62b",
+            "asset": "BTC",
+            "side": "sell",
+            "size": 4.59328,
+            "price": 78109,
+            "size_usd": 358776.51,
+            "closed_pnl_usd": 956.320896,
+            "dir": "Close Long"
+          },
+          {
+            "time": "2026-04-24T13:47:20.041Z",
+            "address": "0x61ceef212ff4a86933c69fb6aca2fe35d8f2a62b",
+            "asset": "BTC",
+            "side": "sell",
+            "size": 4.53237,
+            "price": 78109,
+            "size_usd": 354018.89,
+            "closed_pnl_usd": 943.639434,
+            "dir": "Close Long"
+          },
+          {
+            "time": "2026-04-24T13:47:20.041Z",
+            "address": "0x61ceef212ff4a86933c69fb6aca2fe35d8f2a62b",
+            "asset": "BTC",
+            "side": "sell",
+            "size": 4.59328,
+            "price": 78105,
+            "size_usd": 358758.13,
+            "closed_pnl_usd": 937.947776,
+            "dir": "Close Long"
+          },
+          {
+            "time": "2026-04-24T13:47:20.041Z",
+            "address": "0x61ceef212ff4a86933c69fb6aca2fe35d8f2a62b",
+            "asset": "BTC",
+            "side": "sell",
+            "size": 7.71985,
+            "price": 78104,
+            "size_usd": 602951.16,
+            "closed_pnl_usd": 1568.67352,
+            "dir": "Close Long"
+          },
+          {
+            "time": "2026-04-24T13:47:20.041Z",
+            "address": "0x61ceef212ff4a86933c69fb6aca2fe35d8f2a62b",
+            "asset": "BTC",
+            "side": "sell",
+            "size": 4.59328,
+            "price": 78101,
+            "size_usd": 358739.76,
+            "closed_pnl_usd": 919.574656,
+            "dir": "Close Long"
+          },
+          {
+            "time": "2026-04-24T13:47:20.041Z",
+            "address": "0x61ceef212ff4a86933c69fb6aca2fe35d8f2a62b",
+            "asset": "BTC",
+            "side": "sell",
+            "size": 4.59328,
+            "price": 78097,
+            "size_usd": 358721.39,
+            "closed_pnl_usd": 901.201536,
+            "dir": "Close Long"
+          },
+          {
+            "time": "2026-04-24T13:47:20.041Z",
+            "address": "0x61ceef212ff4a86933c69fb6aca2fe35d8f2a62b",
+            "asset": "BTC",
+            "side": "sell",
+            "size": 4.59328,
+            "price": 78091,
+            "size_usd": 358693.83,
+            "closed_pnl_usd": 873.641856,
+            "dir": "Close Long"
+          },
+          {
+            "time": "2026-04-24T13:47:20.041Z",
+            "address": "0x61ceef212ff4a86933c69fb6aca2fe35d8f2a62b",
+            "asset": "BTC",
+            "side": "sell",
+            "size": 4.59328,
+            "price": 78087,
+            "size_usd": 358675.46,
+            "closed_pnl_usd": 855.268736,
+            "dir": "Close Long"
+          },
+          {
+            "time": "2026-04-24T13:47:19.918Z",
+            "address": "0x61ceef212ff4a86933c69fb6aca2fe35d8f2a62b",
+            "asset": "ETH",
+            "side": "sell",
+            "size": 135.85,
+            "price": 2317.7,
+            "size_usd": 314859.54,
+            "closed_pnl_usd": 1029.743,
+            "dir": "Close Long"
+          },
+          {
+            "time": "2026-04-24T13:47:19.918Z",
+            "address": "0x61ceef212ff4a86933c69fb6aca2fe35d8f2a62b",
+            "asset": "ETH",
+            "side": "sell",
+            "size": 145.5719,
+            "price": 2317.4,
+            "size_usd": 337348.32,
+            "closed_pnl_usd": 1059.763432,
+            "dir": "Close Long"
+          },
+          {
+            "time": "2026-04-24T13:47:19.918Z",
+            "address": "0x61ceef212ff4a86933c69fb6aca2fe35d8f2a62b",
+            "asset": "ETH",
+            "side": "sell",
+            "size": 129.4496,
+            "price": 2316.8,
+            "size_usd": 299908.83,
+            "closed_pnl_usd": 864.723328,
+            "dir": "Close Long"
+          },
+          {
+            "time": "2026-04-24T13:47:19.918Z",
+            "address": "0x61ceef212ff4a86933c69fb6aca2fe35d8f2a62b",
+            "asset": "ETH",
+            "side": "sell",
+            "size": 148.617,
+            "price": 2316.8,
+            "size_usd": 344315.87,
+            "closed_pnl_usd": 992.76156,
+            "dir": "Close Long"
+          },
+          {
+            "time": "2026-04-24T13:47:19.918Z",
+            "address": "0x61ceef212ff4a86933c69fb6aca2fe35d8f2a62b",
+            "asset": "ETH",
+            "side": "sell",
+            "size": 396.274,
+            "price": 2316.5,
+            "size_usd": 917968.72,
+            "closed_pnl_usd": 2528.22812,
+            "dir": "Close Long"
+          },
+          {
+            "time": "2026-04-24T13:47:19.918Z",
+            "address": "0x61ceef212ff4a86933c69fb6aca2fe35d8f2a62b",
+            "asset": "ETH",
+            "side": "sell",
+            "size": 431.4909,
+            "price": 2316.5,
+            "size_usd": 999548.67,
+            "closed_pnl_usd": 2752.911942,
+            "dir": "Close Long"
+          },
+          {
+            "time": "2026-04-24T13:47:19.918Z",
+            "address": "0x61ceef212ff4a86933c69fb6aca2fe35d8f2a62b",
+            "asset": "ETH",
+            "side": "sell",
+            "size": 157.9796,
+            "price": 2316.3,
+            "size_usd": 365928.15,
+            "closed_pnl_usd": 976.313928,
+            "dir": "Close Long"
+          },
+          {
+            "time": "2026-04-24T13:47:19.918Z",
+            "address": "0x61ceef212ff4a86933c69fb6aca2fe35d8f2a62b",
+            "asset": "ETH",
+            "side": "sell",
+            "size": 215.8317,
+            "price": 2315.9,
+            "size_usd": 499844.63,
+            "closed_pnl_usd": 1247.507226,
+            "dir": "Close Long"
+          },
+          {
+            "time": "2026-04-24T13:47:19.918Z",
+            "address": "0x61ceef212ff4a86933c69fb6aca2fe35d8f2a62b",
+            "asset": "ETH",
+            "side": "sell",
+            "size": 215.8432,
+            "price": 2315.8,
+            "size_usd": 499849.68,
+            "closed_pnl_usd": 1225.9893760001,
+            "dir": "Close Long"
+          },
+          {
+            "time": "2026-04-24T13:47:19.918Z",
+            "address": "0x61ceef212ff4a86933c69fb6aca2fe35d8f2a62b",
+            "asset": "ETH",
+            "side": "sell",
+            "size": 544.908,
+            "price": 2315.5,
+            "size_usd": 1261734.47,
+            "closed_pnl_usd": 2931.6050400001,
+            "dir": "Close Long"
+          },
+          {
+            "time": "2026-04-24T13:47:19.918Z",
+            "address": "0x61ceef212ff4a86933c69fb6aca2fe35d8f2a62b",
+            "asset": "ETH",
+            "side": "sell",
+            "size": 971.3517,
+            "price": 2315.1,
+            "size_usd": 2248776.32,
+            "closed_pnl_usd": 4837.331466,
+            "dir": "Close Long"
+          },
+          {
+            "time": "2026-04-24T13:47:19.918Z",
+            "address": "0x61ceef212ff4a86933c69fb6aca2fe35d8f2a62b",
+            "asset": "ETH",
+            "side": "sell",
+            "size": 215.9141,
+            "price": 2315,
+            "size_usd": 499841.14,
+            "closed_pnl_usd": 1053.660808,
+            "dir": "Close Long"
+          },
+          {
+            "time": "2026-04-24T13:41:08.959Z",
+            "address": "0x61ceef212ff4a86933c69fb6aca2fe35d8f2a62b",
+            "asset": "xyz:TSLA",
+            "side": "buy",
+            "size": 772.712,
+            "price": 378.87,
+            "size_usd": 292757.4,
+            "closed_pnl_usd": 3355.115504,
+            "dir": "Close Short"
+          },
+          {
+            "time": "2026-04-24T13:39:22.166Z",
+            "address": "0x61ceef212ff4a86933c69fb6aca2fe35d8f2a62b",
+            "asset": "ETH",
+            "side": "buy",
+            "size": 135.4749,
+            "price": 2324.2,
+            "size_usd": 314870.76,
+            "closed_pnl_usd": 0,
+            "dir": "Open Long"
+          },
+          {
+            "time": "2026-04-24T13:39:16.372Z",
+            "address": "0x61ceef212ff4a86933c69fb6aca2fe35d8f2a62b",
+            "asset": "BTC",
+            "side": "buy",
+            "size": 4.59328,
+            "price": 78240,
+            "size_usd": 359378.23,
+            "closed_pnl_usd": 0,
+            "dir": "Open Long"
+          },
+          {
+            "time": "2026-04-24T13:39:16.372Z",
+            "address": "0x61ceef212ff4a86933c69fb6aca2fe35d8f2a62b",
+            "asset": "BTC",
+            "side": "buy",
+            "size": 4.59328,
+            "price": 78246,
+            "size_usd": 359405.79,
+            "closed_pnl_usd": 0,
+            "dir": "Open Long"
+          },
+          {
+            "time": "2026-04-24T13:39:16.372Z",
+            "address": "0x61ceef212ff4a86933c69fb6aca2fe35d8f2a62b",
+            "asset": "BTC",
+            "side": "buy",
+            "size": 7.40223,
+            "price": 78250,
+            "size_usd": 579224.5,
+            "closed_pnl_usd": 0,
+            "dir": "Open Long"
+          },
+          {
+            "time": "2026-04-24T13:39:16.372Z",
+            "address": "0x61ceef212ff4a86933c69fb6aca2fe35d8f2a62b",
+            "asset": "BTC",
+            "side": "buy",
+            "size": 4.59328,
+            "price": 78251,
+            "size_usd": 359428.75,
+            "closed_pnl_usd": 0,
+            "dir": "Open Long"
+          },
+          {
+            "time": "2026-04-24T13:39:16.372Z",
+            "address": "0x61ceef212ff4a86933c69fb6aca2fe35d8f2a62b",
+            "asset": "BTC",
+            "side": "buy",
+            "size": 3.69953,
+            "price": 78255,
+            "size_usd": 289506.72,
+            "closed_pnl_usd": 0,
+            "dir": "Open Long"
+          },
+          {
+            "time": "2026-04-24T13:37:43.988Z",
+            "address": "0x61ceef212ff4a86933c69fb6aca2fe35d8f2a62b",
+            "asset": "BTC",
+            "side": "buy",
+            "size": 4.59328,
+            "price": 78182,
+            "size_usd": 359111.82,
+            "closed_pnl_usd": 0,
+            "dir": "Open Long"
+          },
+          {
+            "time": "2026-04-24T13:37:43.988Z",
+            "address": "0x61ceef212ff4a86933c69fb6aca2fe35d8f2a62b",
+            "asset": "BTC",
+            "side": "buy",
+            "size": 4.59812,
+            "price": 78185,
+            "size_usd": 359504.01,
+            "closed_pnl_usd": 0,
+            "dir": "Open Long"
+          },
+          {
+            "time": "2026-04-24T13:37:43.988Z",
+            "address": "0x61ceef212ff4a86933c69fb6aca2fe35d8f2a62b",
+            "asset": "BTC",
+            "side": "buy",
+            "size": 4.59328,
+            "price": 78186,
+            "size_usd": 359130.19,
+            "closed_pnl_usd": 0,
+            "dir": "Open Long"
+          },
+          {
+            "time": "2026-04-24T13:37:43.988Z",
+            "address": "0x61ceef212ff4a86933c69fb6aca2fe35d8f2a62b",
+            "asset": "BTC",
+            "side": "buy",
+            "size": 7.71985,
+            "price": 78187,
+            "size_usd": 603591.91,
+            "closed_pnl_usd": 0,
+            "dir": "Open Long"
+          },
+          {
+            "time": "2026-04-24T13:37:38.542Z",
+            "address": "0x61ceef212ff4a86933c69fb6aca2fe35d8f2a62b",
+            "asset": "ETH",
+            "side": "buy",
+            "size": 135.6195,
+            "price": 2321.7,
+            "size_usd": 314867.79,
+            "closed_pnl_usd": 0,
+            "dir": "Open Long"
+          },
+          {
+            "time": "2026-04-24T13:37:38.542Z",
+            "address": "0x61ceef212ff4a86933c69fb6aca2fe35d8f2a62b",
+            "asset": "ETH",
+            "side": "buy",
+            "size": 148.577,
+            "price": 2322.2,
+            "size_usd": 345025.51,
+            "closed_pnl_usd": 0,
+            "dir": "Open Long"
+          },
+          {
+            "time": "2026-04-24T13:37:38.542Z",
+            "address": "0x61ceef212ff4a86933c69fb6aca2fe35d8f2a62b",
+            "asset": "ETH",
+            "side": "buy",
+            "size": 145.2743,
+            "price": 2322.2,
+            "size_usd": 337355.98,
+            "closed_pnl_usd": 0,
+            "dir": "Open Long"
+          },
+          {
+            "time": "2026-04-24T12:07:02.985Z",
+            "address": "0x004edcd40360e293e4cf260d2ebdf8c7076c1bb8",
+            "asset": "BTC",
+            "side": "sell",
+            "size": 20.797,
+            "price": 78200,
+            "size_usd": 1626325.4,
+            "closed_pnl_usd": 0,
+            "dir": "Open Short"
+          },
+          {
+            "time": "2026-04-24T11:48:46.550Z",
+            "address": "0x004edcd40360e293e4cf260d2ebdf8c7076c1bb8",
+            "asset": "BTC",
+            "side": "sell",
+            "size": 4.11406,
+            "price": 78200,
+            "size_usd": 321719.49,
+            "closed_pnl_usd": 0,
+            "dir": "Open Short"
+          },
+          {
+            "time": "2026-04-24T11:22:25.428Z",
+            "address": "0xb581d667c53fd8a50bf7ffd817be0e62daa16f4f",
+            "asset": "xyz:BRENTOIL",
+            "side": "buy",
+            "size": 4000,
+            "price": 98.5,
+            "size_usd": 394000,
+            "closed_pnl_usd": 0,
+            "dir": "Open Long"
+          },
+          {
+            "time": "2026-04-24T06:06:42.861Z",
+            "address": "0x004edcd40360e293e4cf260d2ebdf8c7076c1bb8",
+            "asset": "BTC",
+            "side": "buy",
+            "size": 5,
+            "price": 77900,
+            "size_usd": 389500,
+            "closed_pnl_usd": 1749.5,
+            "dir": "Close Short"
+          },
+          {
+            "time": "2026-04-24T06:06:41.773Z",
+            "address": "0x004edcd40360e293e4cf260d2ebdf8c7076c1bb8",
+            "asset": "BTC",
+            "side": "buy",
+            "size": 5,
+            "price": 77900,
+            "size_usd": 389500,
+            "closed_pnl_usd": 1749.5,
+            "dir": "Close Short"
+          },
+          {
+            "time": "2026-04-24T06:06:41.016Z",
+            "address": "0x004edcd40360e293e4cf260d2ebdf8c7076c1bb8",
+            "asset": "BTC",
+            "side": "buy",
+            "size": 5,
+            "price": 77900,
+            "size_usd": 389500,
+            "closed_pnl_usd": 1749.5,
+            "dir": "Close Short"
+          },
+          {
+            "time": "2026-04-24T06:06:39.933Z",
+            "address": "0x004edcd40360e293e4cf260d2ebdf8c7076c1bb8",
+            "asset": "BTC",
+            "side": "buy",
+            "size": 5,
+            "price": 77900,
+            "size_usd": 389500,
+            "closed_pnl_usd": 1749.5,
+            "dir": "Close Short"
+          },
+          {
+            "time": "2026-04-24T06:06:38.716Z",
+            "address": "0x004edcd40360e293e4cf260d2ebdf8c7076c1bb8",
+            "asset": "BTC",
+            "side": "buy",
+            "size": 5,
+            "price": 77900,
+            "size_usd": 389500,
+            "closed_pnl_usd": 1749.5,
+            "dir": "Close Short"
+          },
+          {
+            "time": "2026-04-24T06:06:37.483Z",
+            "address": "0x004edcd40360e293e4cf260d2ebdf8c7076c1bb8",
+            "asset": "BTC",
+            "side": "buy",
+            "size": 4.69991,
+            "price": 77900,
+            "size_usd": 366122.99,
+            "closed_pnl_usd": 1644.498509,
+            "dir": "Close Short"
+          },
+          {
+            "time": "2026-04-24T06:06:01.757Z",
+            "address": "0x004edcd40360e293e4cf260d2ebdf8c7076c1bb8",
+            "asset": "BTC",
+            "side": "buy",
+            "size": 10,
+            "price": 77900,
+            "size_usd": 779000,
+            "closed_pnl_usd": 3498.9999999999,
+            "dir": "Close Short"
+          },
+          {
+            "time": "2026-04-24T06:05:53.508Z",
+            "address": "0x004edcd40360e293e4cf260d2ebdf8c7076c1bb8",
+            "asset": "BTC",
+            "side": "buy",
+            "size": 12.96032,
+            "price": 77900,
+            "size_usd": 1009608.93,
+            "closed_pnl_usd": 4536.112,
+            "dir": "Close Short"
+          },
+          {
+            "time": "2026-04-24T05:56:09.021Z",
+            "address": "0x004edcd40360e293e4cf260d2ebdf8c7076c1bb8",
+            "asset": "BTC",
+            "side": "buy",
+            "size": 4.76108,
+            "price": 77940,
+            "size_usd": 371078.58,
+            "closed_pnl_usd": 1475.9348,
+            "dir": "Close Short"
+          },
+          {
+            "time": "2026-04-24T05:56:09.021Z",
+            "address": "0x004edcd40360e293e4cf260d2ebdf8c7076c1bb8",
+            "asset": "BTC",
+            "side": "buy",
+            "size": 9.24672,
+            "price": 77964,
+            "size_usd": 720911.28,
+            "closed_pnl_usd": 2644.56192,
+            "dir": "Close Short"
+          },
+          {
+            "time": "2026-04-24T05:56:09.021Z",
+            "address": "0x004edcd40360e293e4cf260d2ebdf8c7076c1bb8",
+            "asset": "BTC",
+            "side": "buy",
+            "size": 9.24672,
+            "price": 77968,
+            "size_usd": 720948.26,
+            "closed_pnl_usd": 2607.57504,
+            "dir": "Close Short"
+          },
+          {
+            "time": "2026-04-24T05:56:09.021Z",
+            "address": "0x004edcd40360e293e4cf260d2ebdf8c7076c1bb8",
+            "asset": "BTC",
+            "side": "buy",
+            "size": 4.80316,
+            "price": 77975,
+            "size_usd": 374526.4,
+            "closed_pnl_usd": 1320.869,
+            "dir": "Close Short"
+          },
+          {
+            "time": "2026-04-24T05:56:09.021Z",
+            "address": "0x004edcd40360e293e4cf260d2ebdf8c7076c1bb8",
+            "asset": "BTC",
+            "side": "buy",
+            "size": 9.24672,
+            "price": 77978,
+            "size_usd": 721040.73,
+            "closed_pnl_usd": 2515.10784,
+            "dir": "Close Short"
+          },
+          {
+            "time": "2026-04-24T05:56:09.021Z",
+            "address": "0x004edcd40360e293e4cf260d2ebdf8c7076c1bb8",
+            "asset": "BTC",
+            "side": "buy",
+            "size": 9.24672,
+            "price": 77982,
+            "size_usd": 721077.72,
+            "closed_pnl_usd": 2478.12096,
+            "dir": "Close Short"
+          },
+          {
+            "time": "2026-04-24T05:56:09.021Z",
+            "address": "0x004edcd40360e293e4cf260d2ebdf8c7076c1bb8",
+            "asset": "BTC",
+            "side": "buy",
+            "size": 4.80316,
+            "price": 77983,
+            "size_usd": 374564.83,
+            "closed_pnl_usd": 1282.44372,
+            "dir": "Close Short"
+          },
+          {
+            "time": "2026-04-24T05:56:09.021Z",
+            "address": "0x004edcd40360e293e4cf260d2ebdf8c7076c1bb8",
+            "asset": "BTC",
+            "side": "buy",
+            "size": 7.71985,
+            "price": 77983,
+            "size_usd": 602017.06,
+            "closed_pnl_usd": 2061.19995,
+            "dir": "Close Short"
+          },
+          {
+            "time": "2026-04-24T05:56:09.021Z",
+            "address": "0x004edcd40360e293e4cf260d2ebdf8c7076c1bb8",
+            "asset": "BTC",
+            "side": "buy",
+            "size": 7.71985,
+            "price": 77984,
+            "size_usd": 602024.78,
+            "closed_pnl_usd": 2053.4801,
+            "dir": "Close Short"
+          },
+          {
+            "time": "2026-04-24T05:56:09.021Z",
+            "address": "0x004edcd40360e293e4cf260d2ebdf8c7076c1bb8",
+            "asset": "BTC",
+            "side": "buy",
+            "size": 7.71985,
+            "price": 77985,
+            "size_usd": 602032.5,
+            "closed_pnl_usd": 2045.76025,
+            "dir": "Close Short"
+          },
+          {
+            "time": "2026-04-24T05:56:09.021Z",
+            "address": "0x004edcd40360e293e4cf260d2ebdf8c7076c1bb8",
+            "asset": "BTC",
+            "side": "buy",
+            "size": 4.38016,
+            "price": 77986,
+            "size_usd": 341591.16,
+            "closed_pnl_usd": 1156.36224,
+            "dir": "Close Short"
+          },
+          {
+            "time": "2026-04-24T05:38:40.969Z",
+            "address": "0x61ceef212ff4a86933c69fb6aca2fe35d8f2a62b",
+            "asset": "ETH",
+            "side": "buy",
+            "size": 136.4902,
+            "price": 2306.8,
+            "size_usd": 314855.59,
+            "closed_pnl_usd": 0,
+            "dir": "Open Long"
+          },
+          {
+            "time": "2026-04-24T05:38:40.969Z",
+            "address": "0x61ceef212ff4a86933c69fb6aca2fe35d8f2a62b",
+            "asset": "ETH",
+            "side": "buy",
+            "size": 149.529,
+            "price": 2307.2,
+            "size_usd": 344993.31,
+            "closed_pnl_usd": 0,
+            "dir": "Open Long"
+          },
+          {
+            "time": "2026-04-24T05:26:59.859Z",
+            "address": "0x61ceef212ff4a86933c69fb6aca2fe35d8f2a62b",
+            "asset": "BTC",
+            "side": "buy",
+            "size": 4.64544,
+            "price": 77585,
+            "size_usd": 360416.46,
+            "closed_pnl_usd": 0,
+            "dir": "Open Long"
+          },
+          {
+            "time": "2026-04-24T05:26:59.859Z",
+            "address": "0x61ceef212ff4a86933c69fb6aca2fe35d8f2a62b",
+            "asset": "BTC",
+            "side": "buy",
+            "size": 4.64544,
+            "price": 77589,
+            "size_usd": 360435.04,
+            "closed_pnl_usd": 0,
+            "dir": "Open Long"
+          },
+          {
+            "time": "2026-04-24T05:26:59.859Z",
+            "address": "0x61ceef212ff4a86933c69fb6aca2fe35d8f2a62b",
+            "asset": "BTC",
+            "side": "buy",
+            "size": 4.64544,
+            "price": 77595,
+            "size_usd": 360462.92,
+            "closed_pnl_usd": 0,
+            "dir": "Open Long"
+          },
+          {
+            "time": "2026-04-24T05:26:59.859Z",
+            "address": "0x61ceef212ff4a86933c69fb6aca2fe35d8f2a62b",
+            "asset": "BTC",
+            "side": "buy",
+            "size": 7.71985,
+            "price": 77596,
+            "size_usd": 599029.48,
+            "closed_pnl_usd": 0,
+            "dir": "Open Long"
+          },
+          {
+            "time": "2026-04-24T05:26:59.859Z",
+            "address": "0x61ceef212ff4a86933c69fb6aca2fe35d8f2a62b",
+            "asset": "BTC",
+            "side": "buy",
+            "size": 4.64544,
+            "price": 77599,
+            "size_usd": 360481.5,
+            "closed_pnl_usd": 0,
+            "dir": "Open Long"
+          },
+          {
+            "time": "2026-04-24T05:26:59.859Z",
+            "address": "0x61ceef212ff4a86933c69fb6aca2fe35d8f2a62b",
+            "asset": "BTC",
+            "side": "buy",
+            "size": 4.63895,
+            "price": 77600,
+            "size_usd": 359982.52,
+            "closed_pnl_usd": 0,
+            "dir": "Open Long"
+          },
+          {
+            "time": "2026-04-24T05:26:59.859Z",
+            "address": "0x61ceef212ff4a86933c69fb6aca2fe35d8f2a62b",
+            "asset": "BTC",
+            "side": "buy",
+            "size": 4.64544,
+            "price": 77603,
+            "size_usd": 360500.08,
+            "closed_pnl_usd": 0,
+            "dir": "Open Long"
+          },
+          {
+            "time": "2026-04-24T05:26:59.859Z",
+            "address": "0x61ceef212ff4a86933c69fb6aca2fe35d8f2a62b",
+            "asset": "BTC",
+            "side": "buy",
+            "size": 3.83188,
+            "price": 77604,
+            "size_usd": 297369.22,
+            "closed_pnl_usd": 0,
+            "dir": "Open Long"
+          },
+          {
+            "time": "2026-04-24T05:26:59.859Z",
+            "address": "0x61ceef212ff4a86933c69fb6aca2fe35d8f2a62b",
+            "asset": "BTC",
+            "side": "buy",
+            "size": 3.89293,
+            "price": 77605,
+            "size_usd": 302110.83,
+            "closed_pnl_usd": 0,
+            "dir": "Open Long"
+          },
+          {
+            "time": "2026-04-24T03:19:57.735Z",
+            "address": "0x004edcd40360e293e4cf260d2ebdf8c7076c1bb8",
+            "asset": "BTC",
+            "side": "sell",
+            "size": 5,
+            "price": 78000,
+            "size_usd": 390000,
+            "closed_pnl_usd": 0,
+            "dir": "Open Short"
+          },
+          {
+            "time": "2026-04-24T03:19:11.155Z",
+            "address": "0x004edcd40360e293e4cf260d2ebdf8c7076c1bb8",
+            "asset": "BTC",
+            "side": "sell",
+            "size": 3.38356,
+            "price": 78000,
+            "size_usd": 263917.68,
+            "closed_pnl_usd": 0,
+            "dir": "Open Short"
+          },
+          {
+            "time": "2026-04-24T03:18:59.465Z",
+            "address": "0x004edcd40360e293e4cf260d2ebdf8c7076c1bb8",
+            "asset": "BTC",
+            "side": "sell",
+            "size": 30,
+            "price": 78000,
+            "size_usd": 2340000,
+            "closed_pnl_usd": 0,
+            "dir": "Open Short"
+          },
+          {
+            "time": "2026-04-24T02:20:15.476Z",
+            "address": "0xb581d667c53fd8a50bf7ffd817be0e62daa16f4f",
+            "asset": "xyz:BRENTOIL",
+            "side": "buy",
+            "size": 7540.53,
+            "price": 100,
+            "size_usd": 754053,
+            "closed_pnl_usd": 0,
+            "dir": "Open Long"
+          },
+          {
+            "time": "2026-04-24T02:03:41.727Z",
+            "address": "0x004edcd40360e293e4cf260d2ebdf8c7076c1bb8",
+            "asset": "BTC",
+            "side": "sell",
+            "size": 3.35903,
+            "price": 78500,
+            "size_usd": 263683.86,
+            "closed_pnl_usd": 0,
+            "dir": "Open Short"
+          },
+          {
+            "time": "2026-04-24T02:03:41.727Z",
+            "address": "0x004edcd40360e293e4cf260d2ebdf8c7076c1bb8",
+            "asset": "BTC",
+            "side": "sell",
+            "size": 6.97768,
+            "price": 78500,
+            "size_usd": 547747.88,
+            "closed_pnl_usd": 0,
+            "dir": "Open Short"
+          },
+          {
+            "time": "2026-04-24T02:03:41.727Z",
+            "address": "0x004edcd40360e293e4cf260d2ebdf8c7076c1bb8",
+            "asset": "BTC",
+            "side": "sell",
+            "size": 5.61072,
+            "price": 78500,
+            "size_usd": 440441.52,
+            "closed_pnl_usd": 0,
+            "dir": "Open Short"
+          },
+          {
+            "time": "2026-04-24T02:03:41.727Z",
+            "address": "0x004edcd40360e293e4cf260d2ebdf8c7076c1bb8",
+            "asset": "BTC",
+            "side": "sell",
+            "size": 3.57665,
+            "price": 78500,
+            "size_usd": 280767.02,
+            "closed_pnl_usd": 0,
+            "dir": "Open Short"
+          },
+          {
+            "time": "2026-04-24T00:45:57.262Z",
+            "address": "0xb581d667c53fd8a50bf7ffd817be0e62daa16f4f",
+            "asset": "xyz:BRENTOIL",
+            "side": "sell",
+            "size": 4000,
+            "price": 100.2,
+            "size_usd": 400800,
+            "closed_pnl_usd": 38354,
+            "dir": "Close Long"
+          },
+          {
+            "time": "2026-04-24T00:45:53.119Z",
+            "address": "0xb581d667c53fd8a50bf7ffd817be0e62daa16f4f",
+            "asset": "xyz:BRENTOIL",
+            "side": "sell",
+            "size": 4000,
+            "price": 100.2,
+            "size_usd": 400800,
+            "closed_pnl_usd": 38354,
+            "dir": "Close Long"
+          },
+          {
+            "time": "2026-04-24T00:45:51.962Z",
+            "address": "0xb581d667c53fd8a50bf7ffd817be0e62daa16f4f",
+            "asset": "xyz:BRENTOIL",
+            "side": "sell",
+            "size": 4000,
+            "price": 100.2,
+            "size_usd": 400800,
+            "closed_pnl_usd": 38354,
+            "dir": "Close Long"
+          },
+          {
+            "time": "2026-04-24T00:45:50.662Z",
+            "address": "0xb581d667c53fd8a50bf7ffd817be0e62daa16f4f",
+            "asset": "xyz:BRENTOIL",
+            "side": "sell",
+            "size": 4000,
+            "price": 100.2,
+            "size_usd": 400800,
+            "closed_pnl_usd": 38354,
+            "dir": "Close Long"
+          },
+          {
+            "time": "2026-04-24T00:45:46.508Z",
+            "address": "0xb581d667c53fd8a50bf7ffd817be0e62daa16f4f",
+            "asset": "xyz:BRENTOIL",
+            "side": "sell",
+            "size": 4000,
+            "price": 100.2,
+            "size_usd": 400800,
+            "closed_pnl_usd": 38354,
+            "dir": "Close Long"
+          },
+          {
+            "time": "2026-04-24T00:45:37.214Z",
+            "address": "0xb581d667c53fd8a50bf7ffd817be0e62daa16f4f",
+            "asset": "xyz:BRENTOIL",
+            "side": "sell",
+            "size": 4000,
+            "price": 100.2,
+            "size_usd": 400800,
+            "closed_pnl_usd": 38354,
+            "dir": "Close Long"
+          },
+          {
+            "time": "2026-04-24T00:45:35.798Z",
+            "address": "0xb581d667c53fd8a50bf7ffd817be0e62daa16f4f",
+            "asset": "xyz:BRENTOIL",
+            "side": "sell",
+            "size": 4000,
+            "price": 100.2,
+            "size_usd": 400800,
+            "closed_pnl_usd": 38354,
+            "dir": "Close Long"
+          },
+          {
+            "time": "2026-04-24T00:45:23.341Z",
+            "address": "0xb581d667c53fd8a50bf7ffd817be0e62daa16f4f",
+            "asset": "xyz:BRENTOIL",
+            "side": "sell",
+            "size": 4000,
+            "price": 100.2,
+            "size_usd": 400800,
+            "closed_pnl_usd": 38354,
+            "dir": "Close Long"
+          },
+          {
+            "time": "2026-04-24T00:43:59.379Z",
+            "address": "0xb581d667c53fd8a50bf7ffd817be0e62daa16f4f",
+            "asset": "xyz:BRENTOIL",
+            "side": "sell",
+            "size": 4000,
+            "price": 100.2,
+            "size_usd": 400800,
+            "closed_pnl_usd": 38354,
+            "dir": "Close Long"
+          },
+          {
+            "time": "2026-04-24T00:43:55.273Z",
+            "address": "0xb581d667c53fd8a50bf7ffd817be0e62daa16f4f",
+            "asset": "xyz:BRENTOIL",
+            "side": "sell",
+            "size": 4000,
+            "price": 100.2,
+            "size_usd": 400800,
+            "closed_pnl_usd": 38354,
+            "dir": "Close Long"
+          },
+          {
+            "time": "2026-04-24T00:43:54.174Z",
+            "address": "0xb581d667c53fd8a50bf7ffd817be0e62daa16f4f",
+            "asset": "xyz:BRENTOIL",
+            "side": "sell",
+            "size": 4000,
+            "price": 100.2,
+            "size_usd": 400800,
+            "closed_pnl_usd": 38354,
+            "dir": "Close Long"
+          },
+          {
+            "time": "2026-04-24T00:43:52.967Z",
+            "address": "0xb581d667c53fd8a50bf7ffd817be0e62daa16f4f",
+            "asset": "xyz:BRENTOIL",
+            "side": "sell",
+            "size": 4000,
+            "price": 100.2,
+            "size_usd": 400800,
+            "closed_pnl_usd": 38354,
+            "dir": "Close Long"
+          },
+          {
+            "time": "2026-04-24T00:43:48.704Z",
+            "address": "0xb581d667c53fd8a50bf7ffd817be0e62daa16f4f",
+            "asset": "xyz:BRENTOIL",
+            "side": "sell",
+            "size": 4000,
+            "price": 100.2,
+            "size_usd": 400800,
+            "closed_pnl_usd": 38354,
+            "dir": "Close Long"
+          },
+          {
+            "time": "2026-04-24T00:42:12.058Z",
+            "address": "0xb581d667c53fd8a50bf7ffd817be0e62daa16f4f",
+            "asset": "xyz:BRENTOIL",
+            "side": "sell",
+            "size": 3990.81,
+            "price": 100.2,
+            "size_usd": 399879.16,
+            "closed_pnl_usd": 38265.881685,
+            "dir": "Close Long"
+          },
+          {
+            "time": "2026-04-24T00:42:06.095Z",
+            "address": "0xb581d667c53fd8a50bf7ffd817be0e62daa16f4f",
+            "asset": "xyz:BRENTOIL",
+            "side": "sell",
+            "size": 4000,
+            "price": 100.2,
+            "size_usd": 400800,
+            "closed_pnl_usd": 38354,
+            "dir": "Close Long"
+          },
+          {
+            "time": "2026-04-24T00:42:04.659Z",
+            "address": "0xb581d667c53fd8a50bf7ffd817be0e62daa16f4f",
+            "asset": "xyz:BRENTOIL",
+            "side": "sell",
+            "size": 4000,
+            "price": 100.2,
+            "size_usd": 400800,
+            "closed_pnl_usd": 38354,
+            "dir": "Close Long"
+          },
+          {
+            "time": "2026-04-24T00:42:03.375Z",
+            "address": "0xb581d667c53fd8a50bf7ffd817be0e62daa16f4f",
+            "asset": "xyz:BRENTOIL",
+            "side": "sell",
+            "size": 4000,
+            "price": 100.2,
+            "size_usd": 400800,
+            "closed_pnl_usd": 38354,
+            "dir": "Close Long"
+          },
+          {
+            "time": "2026-04-24T00:42:02.042Z",
+            "address": "0xb581d667c53fd8a50bf7ffd817be0e62daa16f4f",
+            "asset": "xyz:BRENTOIL",
+            "side": "sell",
+            "size": 4000,
+            "price": 100.2,
+            "size_usd": 400800,
+            "closed_pnl_usd": 38354,
+            "dir": "Close Long"
+          },
+          {
+            "time": "2026-04-24T00:42:00.918Z",
+            "address": "0xb581d667c53fd8a50bf7ffd817be0e62daa16f4f",
+            "asset": "xyz:BRENTOIL",
+            "side": "sell",
+            "size": 4000,
+            "price": 100.2,
+            "size_usd": 400800,
+            "closed_pnl_usd": 38354,
+            "dir": "Close Long"
+          },
+          {
+            "time": "2026-04-24T00:11:50.042Z",
+            "address": "0xb581d667c53fd8a50bf7ffd817be0e62daa16f4f",
+            "asset": "xyz:BRENTOIL",
+            "side": "sell",
+            "size": 3774.18,
+            "price": 100.3,
+            "size_usd": 378550.25,
+            "closed_pnl_usd": 36566.14293,
+            "dir": "Close Long"
+          },
+          {
+            "time": "2026-04-24T00:07:39.864Z",
+            "address": "0xb581d667c53fd8a50bf7ffd817be0e62daa16f4f",
+            "asset": "xyz:BRENTOIL",
+            "side": "sell",
+            "size": 3690.1,
+            "price": 100.3,
+            "size_usd": 370117.03,
+            "closed_pnl_usd": 35751.53385,
+            "dir": "Close Long"
+          },
+          {
+            "time": "2026-04-24T00:07:34.109Z",
+            "address": "0xb581d667c53fd8a50bf7ffd817be0e62daa16f4f",
+            "asset": "xyz:BRENTOIL",
+            "side": "sell",
+            "size": 4000,
+            "price": 100.3,
+            "size_usd": 401200,
+            "closed_pnl_usd": 38754,
+            "dir": "Close Long"
+          },
+          {
+            "time": "2026-04-24T00:07:33.596Z",
+            "address": "0xb581d667c53fd8a50bf7ffd817be0e62daa16f4f",
+            "asset": "xyz:BRENTOIL",
+            "side": "sell",
+            "size": 6355.83,
+            "price": 100.3,
+            "size_usd": 637489.75,
+            "closed_pnl_usd": 61578.4589549999,
+            "dir": "Close Long"
+          },
+          {
+            "time": "2026-04-24T00:07:32.806Z",
+            "address": "0xb581d667c53fd8a50bf7ffd817be0e62daa16f4f",
+            "asset": "xyz:BRENTOIL",
+            "side": "sell",
+            "size": 3491.53,
+            "price": 100.3,
+            "size_usd": 350200.46,
+            "closed_pnl_usd": 33827.688405,
+            "dir": "Close Long"
+          },
+          {
+            "time": "2026-04-24T00:07:32.806Z",
+            "address": "0xb581d667c53fd8a50bf7ffd817be0e62daa16f4f",
+            "asset": "xyz:BRENTOIL",
+            "side": "sell",
+            "size": 4000,
+            "price": 100.3,
+            "size_usd": 401200,
+            "closed_pnl_usd": 38754,
+            "dir": "Close Long"
+          },
+          {
+            "time": "2026-04-24T00:07:17.529Z",
+            "address": "0xb581d667c53fd8a50bf7ffd817be0e62daa16f4f",
+            "asset": "xyz:BRENTOIL",
+            "side": "sell",
+            "size": 4000,
+            "price": 100.3,
+            "size_usd": 401200,
+            "closed_pnl_usd": 38754,
+            "dir": "Close Long"
+          },
+          {
+            "time": "2026-04-23T18:03:02.842Z",
+            "address": "0x004edcd40360e293e4cf260d2ebdf8c7076c1bb8",
+            "asset": "BTC",
+            "side": "buy",
+            "size": 6.41123,
+            "price": 77964,
+            "size_usd": 499845.14,
+            "closed_pnl_usd": 654.586583,
+            "dir": "Close Short"
+          },
+          {
+            "time": "2026-04-23T18:03:02.842Z",
+            "address": "0x004edcd40360e293e4cf260d2ebdf8c7076c1bb8",
+            "asset": "BTC",
+            "side": "buy",
+            "size": 7.71985,
+            "price": 77977,
+            "size_usd": 601970.74,
+            "closed_pnl_usd": 687.838635,
+            "dir": "Close Short"
+          },
+          {
+            "time": "2026-04-23T18:03:02.842Z",
+            "address": "0x004edcd40360e293e4cf260d2ebdf8c7076c1bb8",
+            "asset": "BTC",
+            "side": "buy",
+            "size": 4.61737,
+            "price": 77983,
+            "size_usd": 360076.36,
+            "closed_pnl_usd": 383.703447,
+            "dir": "Close Short"
+          },
+          {
+            "time": "2026-04-23T18:03:02.842Z",
+            "address": "0x004edcd40360e293e4cf260d2ebdf8c7076c1bb8",
+            "asset": "BTC",
+            "side": "buy",
+            "size": 6.40933,
+            "price": 77987,
+            "size_usd": 499844.42,
+            "closed_pnl_usd": 506.978003,
+            "dir": "Close Short"
+          },
+          {
+            "time": "2026-04-23T18:03:02.842Z",
+            "address": "0x004edcd40360e293e4cf260d2ebdf8c7076c1bb8",
+            "asset": "BTC",
+            "side": "buy",
+            "size": 4.61737,
+            "price": 77988,
+            "size_usd": 360099.45,
+            "closed_pnl_usd": 360.616597,
+            "dir": "Close Short"
+          },
+          {
+            "time": "2026-04-23T18:03:02.842Z",
+            "address": "0x004edcd40360e293e4cf260d2ebdf8c7076c1bb8",
+            "asset": "BTC",
+            "side": "buy",
+            "size": 4.58847,
+            "price": 77988,
+            "size_usd": 357845.6,
+            "closed_pnl_usd": 358.359507,
+            "dir": "Close Short"
+          },
+          {
+            "time": "2026-04-23T18:03:02.842Z",
+            "address": "0x004edcd40360e293e4cf260d2ebdf8c7076c1bb8",
+            "asset": "BTC",
+            "side": "buy",
+            "size": 3.77453,
+            "price": 77992,
+            "size_usd": 294383.14,
+            "closed_pnl_usd": 279.692673,
+            "dir": "Close Short"
+          },
+          {
+            "time": "2026-04-23T18:02:43.996Z",
+            "address": "0x004edcd40360e293e4cf260d2ebdf8c7076c1bb8",
+            "asset": "BTC",
+            "side": "buy",
+            "size": 7.71985,
+            "price": 77962,
+            "size_usd": 601854.95,
+            "closed_pnl_usd": 803.636385,
+            "dir": "Close Short"
+          },
+          {
+            "time": "2026-04-23T18:02:43.996Z",
+            "address": "0x004edcd40360e293e4cf260d2ebdf8c7076c1bb8",
+            "asset": "BTC",
+            "side": "buy",
+            "size": 9.24322,
+            "price": 77963,
+            "size_usd": 720629.16,
+            "closed_pnl_usd": 952.9759820001,
+            "dir": "Close Short"
+          },
+          {
+            "time": "2026-04-23T18:02:43.996Z",
+            "address": "0x004edcd40360e293e4cf260d2ebdf8c7076c1bb8",
+            "asset": "BTC",
+            "side": "buy",
+            "size": 6.41125,
+            "price": 77964,
+            "size_usd": 499846.7,
+            "closed_pnl_usd": 654.588625,
+            "dir": "Close Short"
+          },
+          {
+            "time": "2026-04-23T18:02:43.996Z",
+            "address": "0x004edcd40360e293e4cf260d2ebdf8c7076c1bb8",
+            "asset": "BTC",
+            "side": "buy",
+            "size": 7.71985,
+            "price": 77967,
+            "size_usd": 601893.54,
+            "closed_pnl_usd": 765.037135,
+            "dir": "Close Short"
+          },
+          {
+            "time": "2026-04-23T18:02:43.996Z",
+            "address": "0x004edcd40360e293e4cf260d2ebdf8c7076c1bb8",
+            "asset": "BTC",
+            "side": "buy",
+            "size": 9.24322,
+            "price": 77968,
+            "size_usd": 720675.38,
+            "closed_pnl_usd": 906.7598820001,
+            "dir": "Close Short"
+          },
+          {
+            "time": "2026-04-23T18:02:43.996Z",
+            "address": "0x004edcd40360e293e4cf260d2ebdf8c7076c1bb8",
+            "asset": "BTC",
+            "side": "buy",
+            "size": 7.71985,
+            "price": 77973,
+            "size_usd": 601939.86,
+            "closed_pnl_usd": 718.718035,
+            "dir": "Close Short"
+          },
+          {
+            "time": "2026-04-23T17:40:46.143Z",
+            "address": "0x004edcd40360e293e4cf260d2ebdf8c7076c1bb8",
+            "asset": "BTC",
+            "side": "buy",
+            "size": 10.69242,
+            "price": 77000,
+            "size_usd": 823316.34,
+            "closed_pnl_usd": 11399.1889620001,
+            "dir": "Close Short"
+          },
+          {
+            "time": "2026-04-23T17:40:46.143Z",
+            "address": "0x004edcd40360e293e4cf260d2ebdf8c7076c1bb8",
+            "asset": "BTC",
+            "side": "buy",
+            "size": 11.00717,
+            "price": 77000,
+            "size_usd": 847552.09,
+            "closed_pnl_usd": 11734.7439370001,
+            "dir": "Close Short"
+          },
+          {
+            "time": "2026-04-23T17:40:42.603Z",
+            "address": "0x004edcd40360e293e4cf260d2ebdf8c7076c1bb8",
+            "asset": "BTC",
+            "side": "buy",
+            "size": 3.34766,
+            "price": 77000,
+            "size_usd": 257769.82,
+            "closed_pnl_usd": 3568.940326,
+            "dir": "Close Short"
+          },
+          {
+            "time": "2026-04-23T17:40:42.603Z",
+            "address": "0x004edcd40360e293e4cf260d2ebdf8c7076c1bb8",
+            "asset": "BTC",
+            "side": "buy",
+            "size": 3.50858,
+            "price": 77000,
+            "size_usd": 270160.66,
+            "closed_pnl_usd": 3740.497138,
+            "dir": "Close Short"
+          },
+          {
+            "time": "2026-04-23T17:40:33.558Z",
+            "address": "0x004edcd40360e293e4cf260d2ebdf8c7076c1bb8",
+            "asset": "BTC",
+            "side": "buy",
+            "size": 41.79342,
+            "price": 77000,
+            "size_usd": 3218093.34,
+            "closed_pnl_usd": 44555.9650620002,
+            "dir": "Close Short"
+          },
+          {
+            "time": "2026-04-23T17:40:30.671Z",
+            "address": "0x004edcd40360e293e4cf260d2ebdf8c7076c1bb8",
+            "asset": "BTC",
+            "side": "buy",
+            "size": 10.36866,
+            "price": 77000,
+            "size_usd": 798386.82,
+            "closed_pnl_usd": 11054.0284260001,
+            "dir": "Close Short"
+          },
+          {
+            "time": "2026-04-23T16:54:55.552Z",
+            "address": "0x004edcd40360e293e4cf260d2ebdf8c7076c1bb8",
+            "asset": "BTC",
+            "side": "sell",
+            "size": 4.30171,
+            "price": 78042,
+            "size_usd": 335714.05,
+            "closed_pnl_usd": 0,
+            "dir": "Open Short"
+          },
+          {
+            "time": "2026-04-23T16:54:55.552Z",
+            "address": "0x004edcd40360e293e4cf260d2ebdf8c7076c1bb8",
+            "asset": "BTC",
+            "side": "sell",
+            "size": 4.30171,
+            "price": 78038,
+            "size_usd": 335696.84,
+            "closed_pnl_usd": 0,
+            "dir": "Open Short"
+          },
+          {
+            "time": "2026-04-23T16:54:55.552Z",
+            "address": "0x004edcd40360e293e4cf260d2ebdf8c7076c1bb8",
+            "asset": "BTC",
+            "side": "sell",
+            "size": 7.71985,
+            "price": 78037,
+            "size_usd": 602433.93,
+            "closed_pnl_usd": 0,
+            "dir": "Open Short"
+          },
+          {
+            "time": "2026-04-23T16:54:55.552Z",
+            "address": "0x004edcd40360e293e4cf260d2ebdf8c7076c1bb8",
+            "asset": "BTC",
+            "side": "sell",
+            "size": 4.30171,
+            "price": 78032,
+            "size_usd": 335671.03,
+            "closed_pnl_usd": 0,
+            "dir": "Open Short"
+          },
+          {
+            "time": "2026-04-23T16:54:55.552Z",
+            "address": "0x004edcd40360e293e4cf260d2ebdf8c7076c1bb8",
+            "asset": "BTC",
+            "side": "sell",
+            "size": 4.48101,
+            "price": 78030,
+            "size_usd": 349653.21,
+            "closed_pnl_usd": 0,
+            "dir": "Open Short"
+          },
+          {
+            "time": "2026-04-23T16:54:55.552Z",
+            "address": "0x004edcd40360e293e4cf260d2ebdf8c7076c1bb8",
+            "asset": "BTC",
+            "side": "sell",
+            "size": 7.71985,
+            "price": 78030,
+            "size_usd": 602379.9,
+            "closed_pnl_usd": 0,
+            "dir": "Open Short"
+          },
+          {
+            "time": "2026-04-23T16:54:29.018Z",
+            "address": "0x004edcd40360e293e4cf260d2ebdf8c7076c1bb8",
+            "asset": "BTC",
+            "side": "sell",
+            "size": 4.30171,
+            "price": 78056,
+            "size_usd": 335774.28,
+            "closed_pnl_usd": 0,
+            "dir": "Open Short"
+          },
+          {
+            "time": "2026-04-23T16:54:29.018Z",
+            "address": "0x004edcd40360e293e4cf260d2ebdf8c7076c1bb8",
+            "asset": "BTC",
+            "side": "sell",
+            "size": 7.71985,
+            "price": 78053,
+            "size_usd": 602557.45,
+            "closed_pnl_usd": 0,
+            "dir": "Open Short"
+          },
+          {
+            "time": "2026-04-23T16:54:29.018Z",
+            "address": "0x004edcd40360e293e4cf260d2ebdf8c7076c1bb8",
+            "asset": "BTC",
+            "side": "sell",
+            "size": 4.30171,
+            "price": 78051,
+            "size_usd": 335752.77,
+            "closed_pnl_usd": 0,
+            "dir": "Open Short"
+          },
+          {
+            "time": "2026-04-23T16:54:29.018Z",
+            "address": "0x004edcd40360e293e4cf260d2ebdf8c7076c1bb8",
+            "asset": "BTC",
+            "side": "sell",
+            "size": 3.92228,
+            "price": 78051,
+            "size_usd": 306137.88,
+            "closed_pnl_usd": 0,
+            "dir": "Open Short"
+          },
+          {
+            "time": "2026-04-23T16:54:29.018Z",
+            "address": "0x004edcd40360e293e4cf260d2ebdf8c7076c1bb8",
+            "asset": "BTC",
+            "side": "sell",
+            "size": 7.71985,
+            "price": 78050,
+            "size_usd": 602534.29,
+            "closed_pnl_usd": 0,
+            "dir": "Open Short"
+          },
+          {
+            "time": "2026-04-23T16:54:29.018Z",
+            "address": "0x004edcd40360e293e4cf260d2ebdf8c7076c1bb8",
+            "asset": "BTC",
+            "side": "sell",
+            "size": 4.55435,
+            "price": 78049,
+            "size_usd": 355462.46,
+            "closed_pnl_usd": 0,
+            "dir": "Open Short"
+          },
+          {
+            "time": "2026-04-23T16:54:29.018Z",
+            "address": "0x004edcd40360e293e4cf260d2ebdf8c7076c1bb8",
+            "asset": "BTC",
+            "side": "sell",
+            "size": 5.95342,
+            "price": 78048,
+            "size_usd": 464652.52,
+            "closed_pnl_usd": 0,
+            "dir": "Open Short"
+          }
+        ]
+      }
+    },
+    {
+      "tool": "address_position_history",
+      "pass": false,
+      "args": {
+        "address": "0x0b8aa35c28b7c6ab18f11dc168f437a8a69fd4f8",
+        "days": 7
+      },
+      "duration_ms": 28056,
+      "shape_notes": "call failed",
+      "realism_notes": "No result",
+      "broken_or_confusing_behavior": "HL API 429: null"
+    },
+    {
+      "tool": "smart_money_flow",
+      "pass": true,
+      "args": {
+        "asset": "HYPE"
+      },
+      "duration_ms": 3554,
+      "shape_notes": "top-level keys: asset, addresses_scanned, total_long_usd, total_short_usd, net_usd, long_short_ratio, net_bias, top_longs, top_shorts, note",
+      "realism_notes": "Net bias long, long/short ratio Infinity.",
+      "broken_or_confusing_behavior": "Output note says addresses must be provided explicitly, but the tool actually defaults to seed addresses.",
+      "preview": "object{asset, addresses_scanned, total_long_usd, total_short_usd, net_usd, long_short_ratio, net_bias, top_longs, top_shorts, note}",
+      "result": {
+        "asset": "HYPE",
+        "addresses_scanned": 0,
+        "total_long_usd": 0,
+        "total_short_usd": 0,
+        "net_usd": 0,
+        "long_short_ratio": null,
+        "net_bias": "long",
+        "top_longs": [],
+        "top_shorts": [],
+        "note": "Addresses must be provided explicitly. No public HL leaderboard endpoint exists."
+      }
+    },
+    {
+      "tool": "get_funding_pnl",
+      "pass": true,
+      "args": {
+        "address": "0x0b8aa35c28b7c6ab18f11dc168f437a8a69fd4f8",
+        "days": 7
+      },
+      "duration_ms": 24837,
+      "shape_notes": "top-level keys: address, days, event_count, total_net_usd, total_paid_usd, total_received_usd, by_asset, interpretation",
+      "realism_notes": "Funding pnl over 7d: $undefined.",
+      "broken_or_confusing_behavior": "",
+      "preview": "object{address, days, event_count, total_net_usd, total_paid_usd, total_received_usd, by_asset, interpretation}",
+      "result": {
+        "address": "0x0b8aa35c28b7c6ab18f11dc168f437a8a69fd4f8",
+        "days": 7,
+        "event_count": 168,
+        "total_net_usd": null,
+        "total_paid_usd": null,
+        "total_received_usd": 0,
+        "by_asset": [
+          {
+            "event_count": 168,
+            "net_usd": null,
+            "paid_usd": null,
+            "received_usd": 0
+          }
+        ],
+        "interpretation": "Net funding paid out of NaN USDC over 7d."
+      }
+    },
+    {
+      "tool": "get_funding_divergence",
+      "pass": true,
+      "args": {
+        "asset": "HYPE"
+      },
+      "duration_ms": 10901,
+      "shape_notes": "top-level keys: asset, hl_funding_annual_pct, hl_mark_price, exchanges, best_arb, disclaimer",
+      "realism_notes": "Compared hyperliquid.",
+      "broken_or_confusing_behavior": "",
+      "preview": "object{asset, hl_funding_annual_pct, hl_mark_price, exchanges, best_arb, disclaimer}",
+      "result": {
+        "asset": "HYPE",
+        "hl_funding_annual_pct": -15.8122,
+        "hl_mark_price": 41.144,
+        "exchanges": [
+          {
+            "exchange": "hyperliquid",
+            "rate_per_hour_pct": -0.001805,
+            "rate_annual_pct": -15.8122,
+            "divergence_vs_hl_annual_pct": 0
+          }
+        ],
+        "best_arb": null,
+        "disclaimer": "Annualized rates assume funding stays constant (it doesn't). Fees, slippage, and margin drift not included."
+      }
+    },
+    {
+      "tool": "asset_snapshot",
+      "pass": true,
+      "args": {
+        "asset": "HYPE"
+      },
+      "duration_ms": 684,
+      "shape_notes": "top-level keys: asset, mark_price, oracle_price, mid_price, prev_day_price, change_24h_pct, funding_per_hour_pct, funding_annual_pct, open_interest_base, open_interest_usd, day_volume_usd, max_leverage",
+      "realism_notes": "Asset HYPE.",
+      "broken_or_confusing_behavior": "",
+      "preview": "object{asset, mark_price, oracle_price, mid_price, prev_day_price, change_24h_pct, funding_per_hour_pct, funding_annual_pct, open_interest_base, open_interest_usd, day_volume_usd, max_leverage}",
+      "result": {
+        "asset": "HYPE",
+        "mark_price": 41.14,
+        "oracle_price": 41.164,
+        "mid_price": 41.1405,
+        "prev_day_price": 41.839,
+        "change_24h_pct": -1.6707,
+        "funding_per_hour_pct": -0.001884,
+        "funding_annual_pct": -16.5032,
+        "open_interest_base": 19716143.07999999,
+        "open_interest_usd": 811122126.31,
+        "day_volume_usd": 143753876.14476997,
+        "max_leverage": 10,
+        "premium_pct": -0.055874,
+        "impact_prices": {
+          "bid": 41.1348,
+          "ask": 41.141
+        }
+      }
+    },
+    {
+      "tool": "get_all_asset_ctxs",
+      "pass": true,
+      "args": {
+        "sort_by": "volume",
+        "limit": 20
+      },
+      "duration_ms": 302,
+      "shape_notes": "top-level keys: total, returned, sorted_by, assets",
+      "realism_notes": "Returned 20/230 assets sorted by volume.",
+      "broken_or_confusing_behavior": "",
+      "preview": "object{total, returned, sorted_by, assets}",
+      "result": {
+        "total": 230,
+        "returned": 20,
+        "sorted_by": "volume",
+        "assets": [
+          {
+            "asset": "BTC",
+            "mark_price": 77935,
+            "funding_annual_pct": 10.95,
+            "open_interest_usd": 2207510941.84,
+            "day_volume_usd": 2620720464.3053055,
+            "change_24h_pct": -0.5208,
+            "max_leverage": 40
+          },
+          {
+            "asset": "ETH",
+            "mark_price": 2319.6,
+            "funding_annual_pct": 7.803,
+            "open_interest_usd": 996672027.05,
+            "day_volume_usd": 966669969.8592193,
+            "change_24h_pct": -0.5317,
+            "max_leverage": 25
+          },
+          {
+            "asset": "SOL",
+            "mark_price": 86.347,
+            "funding_annual_pct": -10.4003,
+            "open_interest_usd": 290888935.63,
+            "day_volume_usd": 231557925.8040699,
+            "change_24h_pct": 0.0324,
+            "max_leverage": 20
+          },
+          {
+            "asset": "HYPE",
+            "mark_price": 41.141,
+            "funding_annual_pct": -16.5032,
+            "open_interest_usd": 811141842.45,
+            "day_volume_usd": 143753925.14777997,
+            "change_24h_pct": -1.6683,
+            "max_leverage": 10
+          },
+          {
+            "asset": "ZEC",
+            "mark_price": 357.51,
+            "funding_annual_pct": 10.95,
+            "open_interest_usd": 126751716.95,
+            "day_volume_usd": 104516051.14089997,
+            "change_24h_pct": 9.9422,
+            "max_leverage": 10
+          },
+          {
+            "asset": "CHIP",
+            "mark_price": 0.08795,
+            "funding_annual_pct": 10.95,
+            "open_interest_usd": 24749208.1,
+            "day_volume_usd": 45510481.14051702,
+            "change_24h_pct": -7.3147,
+            "max_leverage": 3
+          },
+          {
+            "asset": "AAVE",
+            "mark_price": 94.249,
+            "funding_annual_pct": 10.95,
+            "open_interest_usd": 60576899.16,
+            "day_volume_usd": 23042913.350060005,
+            "change_24h_pct": 0.4144,
+            "max_leverage": 10
+          },
+          {
+            "asset": "FARTCOIN",
+            "mark_price": 0.20103,
+            "funding_annual_pct": 10.95,
+            "open_interest_usd": 42560952.02,
+            "day_volume_usd": 19766244.381881014,
+            "change_24h_pct": -0.0099,
+            "max_leverage": 10
+          },
+          {
+            "asset": "XRP",
+            "mark_price": 1.4466,
+            "funding_annual_pct": 10.95,
+            "open_interest_usd": 85618774.28,
+            "day_volume_usd": 18764475.473500002,
+            "change_24h_pct": 1.076,
+            "max_leverage": 20
+          },
+          {
+            "asset": "TAO",
+            "mark_price": 247.44,
+            "funding_annual_pct": 10.95,
+            "open_interest_usd": 39806262.7,
+            "day_volume_usd": 12553402.161499998,
+            "change_24h_pct": 1.3766,
+            "max_leverage": 5
+          },
+          {
+            "asset": "DOGE",
+            "mark_price": 0.098006,
+            "funding_annual_pct": 10.95,
+            "open_interest_usd": 31939940.57,
+            "day_volume_usd": 11817534.929904997,
+            "change_24h_pct": 0.6739,
+            "max_leverage": 10
+          },
+          {
+            "asset": "kPEPE",
+            "mark_price": 0.003885,
+            "funding_annual_pct": 10.95,
+            "open_interest_usd": 23885023.44,
+            "day_volume_usd": 10190263.769535,
+            "change_24h_pct": 1.251,
+            "max_leverage": 10
+          },
+          {
+            "asset": "MON",
+            "mark_price": 0.031321,
+            "funding_annual_pct": 10.95,
+            "open_interest_usd": 49792018.96,
+            "day_volume_usd": 9596837.960523011,
+            "change_24h_pct": -4.8196,
+            "max_leverage": 5
+          },
+          {
+            "asset": "STABLE",
+            "mark_price": 0.033141,
+            "funding_annual_pct": 10.95,
+            "open_interest_usd": 2957599.55,
+            "day_volume_usd": 7627516.456668004,
+            "change_24h_pct": 11.725,
+            "max_leverage": 3
+          },
+          {
+            "asset": "PENGU",
+            "mark_price": 0.008578,
+            "funding_annual_pct": 10.95,
+            "open_interest_usd": 14516996.4,
+            "day_volume_usd": 7364216.6461120015,
+            "change_24h_pct": -1.4816,
+            "max_leverage": 5
+          },
+          {
+            "asset": "LIT",
+            "mark_price": 0.94371,
+            "funding_annual_pct": 10.95,
+            "open_interest_usd": 47255372.29,
+            "day_volume_usd": 6786131.879340001,
+            "change_24h_pct": 2.9206,
+            "max_leverage": 5
+          },
+          {
+            "asset": "XPL",
+            "mark_price": 0.10043,
+            "funding_annual_pct": 10.95,
+            "open_interest_usd": 25277264.66,
+            "day_volume_usd": 6094560.723959,
+            "change_24h_pct": 0.6968,
+            "max_leverage": 10
+          },
+          {
+            "asset": "XMR",
+            "mark_price": 371.26,
+            "funding_annual_pct": 91.4093,
+            "open_interest_usd": 29922683.54,
+            "day_volume_usd": 5993456.9928899985,
+            "change_24h_pct": -0.8148,
+            "max_leverage": 5
+          },
+          {
+            "asset": "SUI",
+            "mark_price": 0.95046,
+            "funding_annual_pct": -25.9155,
+            "open_interest_usd": 16569711.73,
+            "day_volume_usd": 5513853.682395001,
+            "change_24h_pct": 0.1897,
+            "max_leverage": 10
+          },
+          {
+            "asset": "PAXG",
+            "mark_price": 4712.8,
+            "funding_annual_pct": 10.95,
+            "open_interest_usd": 39200514.29,
+            "day_volume_usd": 4491399.0945999995,
+            "change_24h_pct": 0.1062,
+            "max_leverage": 10
+          }
+        ]
+      }
+    },
+    {
+      "tool": "hlp_metrics",
+      "pass": true,
+      "args": {},
+      "duration_ms": 269,
+      "shape_notes": "top-level keys: vault_address, name, apr, leader_commission, leader_fraction, follower_count, max_withdrawable, max_distributable, allow_deposits, is_closed, disclaimer",
+      "realism_notes": "HLP Hyperliquidity Provider (HLP), APR -0.0018052797369904512, followers 100.",
+      "broken_or_confusing_behavior": "",
+      "preview": "object{vault_address, name, apr, leader_commission, leader_fraction, follower_count, max_withdrawable, max_distributable, allow_deposits, is_closed, disclaimer}",
+      "result": {
+        "vault_address": "0xdfc24b077bc1425ad1dea75bcb6f8158e10df303",
+        "name": "Hyperliquidity Provider (HLP)",
+        "apr": -0.0018052797369904512,
+        "leader_commission": 0,
+        "leader_fraction": 0.0009874410719177516,
+        "follower_count": 100,
+        "max_withdrawable": 0,
+        "max_distributable": 100810074.389558,
+        "allow_deposits": true,
+        "is_closed": false,
+        "disclaimer": "APR is trailing; past performance does not predict future returns. HLP takes the other side of market maker flow; can drawdown during volatility."
+      }
+    },
+    {
+      "tool": "orderbook_imbalance",
+      "pass": true,
+      "args": {
+        "asset": "HYPE",
+        "depth_pct": 1
+      },
+      "duration_ms": 95,
+      "shape_notes": "top-level keys: asset, mid_price, depth_pct, price_low, price_high, bid_depth_usd, ask_depth_usd, imbalance_ratio, dominant_side, top_5_bids, top_5_asks",
+      "realism_notes": "Asset HYPE.",
+      "broken_or_confusing_behavior": "",
+      "preview": "object{asset, mid_price, depth_pct, price_low, price_high, bid_depth_usd, ask_depth_usd, imbalance_ratio, dominant_side, top_5_bids, top_5_asks}",
+      "result": {
+        "asset": "HYPE",
+        "mid_price": 41.1405,
+        "depth_pct": 1,
+        "price_low": 40.7291,
+        "price_high": 41.5519,
+        "bid_depth_usd": 114740.8,
+        "ask_depth_usd": 65486.77,
+        "imbalance_ratio": 1.7521,
+        "dominant_side": "bid",
+        "top_5_bids": [
+          {
+            "px": 41.14,
+            "sz": 21.67,
+            "orders": 2
+          },
+          {
+            "px": 41.136,
+            "sz": 3.01,
+            "orders": 1
+          },
+          {
+            "px": 41.134,
+            "sz": 254.79,
+            "orders": 2
+          },
+          {
+            "px": 41.133,
+            "sz": 132.85,
+            "orders": 2
+          },
+          {
+            "px": 41.132,
+            "sz": 121.55,
+            "orders": 1
+          }
+        ],
+        "top_5_asks": [
+          {
+            "px": 41.141,
+            "sz": 91.74,
+            "orders": 3
+          },
+          {
+            "px": 41.143,
+            "sz": 20,
+            "orders": 1
+          },
+          {
+            "px": 41.146,
+            "sz": 10.93,
+            "orders": 1
+          },
+          {
+            "px": 41.148,
+            "sz": 17.72,
+            "orders": 1
+          },
+          {
+            "px": 41.149,
+            "sz": 141.5,
+            "orders": 2
+          }
+        ]
+      }
+    },
+    {
+      "tool": "compare_perps",
+      "pass": true,
+      "args": {
+        "assets": [
+          "BTC",
+          "ETH",
+          "HYPE"
+        ]
+      },
+      "duration_ms": 532,
+      "shape_notes": "top-level keys: count, table",
+      "realism_notes": "Compared BTC, ETH, HYPE.",
+      "broken_or_confusing_behavior": "",
+      "preview": "object{count, table}",
+      "result": {
+        "count": 3,
+        "table": [
+          {
+            "asset": "BTC",
+            "mark_price": 77934,
+            "change_24h_pct": -0.5221,
+            "funding_annual_pct": 10.95,
+            "open_interest_usd": 2207233514.81,
+            "day_volume_usd": 2620866185.6874256,
+            "max_leverage": 40
+          },
+          {
+            "asset": "ETH",
+            "mark_price": 2319.5,
+            "change_24h_pct": -0.536,
+            "funding_annual_pct": 7.5276,
+            "open_interest_usd": 996322423.6,
+            "day_volume_usd": 966828064.5050993,
+            "max_leverage": 25
+          },
+          {
+            "asset": "HYPE",
+            "mark_price": 41.141,
+            "change_24h_pct": -1.6683,
+            "funding_annual_pct": -15.471,
+            "open_interest_usd": 811141865.49,
+            "day_volume_usd": 143753936.67789996,
+            "max_leverage": 10
+          }
+        ]
+      }
+    },
+    {
+      "tool": "historical_context",
+      "pass": true,
+      "args": {
+        "asset": "HYPE"
+      },
+      "duration_ms": 718,
+      "shape_notes": "top-level keys: asset, current, price_context, interpretation",
+      "realism_notes": "Asset HYPE.",
+      "broken_or_confusing_behavior": "",
+      "preview": "object{asset, current, price_context, interpretation}",
+      "result": {
+        "asset": "HYPE",
+        "current": {
+          "mark_price": 41.1405,
+          "funding_annual_pct": -15.471
+        },
+        "price_context": {
+          "mean_7d": 41.8186,
+          "mean_30d": 39.896,
+          "high_30d": 45.542,
+          "low_30d": 34.653,
+          "pct_above_mean_7d": -1.6215,
+          "pct_above_mean_30d": 3.1193,
+          "range_position_30d_pct": 59.58,
+          "percentile_30d": 66.85,
+          "stddev_7d": 1.5506,
+          "realized_vol_7d_annual_pct": 56.77,
+          "avg_hourly_volume_7d": 232132.58
+        },
+        "interpretation": {
+          "price": "price is close to recent average",
+          "funding": "funding is in a normal range (-15.47%/yr)"
+        }
+      }
+    },
+    {
+      "tool": "detect_anomalies",
+      "pass": true,
+      "args": {},
+      "duration_ms": 259,
+      "shape_notes": "top-level keys: scanned_assets, filtered_out_low_oi, total_oi_usd, total_volume_24h_usd, median_volume_24h_usd, thresholds, anomalies, headline_summary",
+      "realism_notes": "MAVIA funding at +518.8%/yr · APE +62.37% in 24h · BTC volume 3350.1× the HL median",
+      "broken_or_confusing_behavior": "",
+      "preview": "object{scanned_assets, filtered_out_low_oi, total_oi_usd, total_volume_24h_usd, median_volume_24h_usd, thresholds, anomalies, headline_summary}",
+      "result": {
+        "scanned_assets": 117,
+        "filtered_out_low_oi": 113,
+        "total_oi_usd": 5633704810.22,
+        "total_volume_24h_usd": 4361411176.79,
+        "median_volume_24h_usd": 782339.77,
+        "thresholds": {
+          "funding_abs_annual_pct_threshold": 50,
+          "change_24h_abs_pct_threshold": 10,
+          "volume_ratio_threshold": 3,
+          "min_oi_usd": 1000000
+        },
+        "anomalies": {
+          "extreme_funding": [
+            {
+              "asset": "MAVIA",
+              "mark": 0.03494,
+              "change_24h_pct": 3.618,
+              "funding_annual_pct": 518.7977,
+              "oi_usd": 2434191.5,
+              "volume_24h_usd": 89905.811657,
+              "max_leverage": 3
+            },
+            {
+              "asset": "ZEREBRO",
+              "mark": 0.017119,
+              "change_24h_pct": 11.0326,
+              "funding_annual_pct": 374.2387,
+              "oi_usd": 4069400.73,
+              "volume_24h_usd": 152162.958193,
+              "max_leverage": 3
+            },
+            {
+              "asset": "XMR",
+              "mark": 371.29,
+              "change_24h_pct": -0.8068,
+              "funding_annual_pct": 91.5708,
+              "oi_usd": 29925101.47,
+              "volume_24h_usd": 5993456.9928899985,
+              "max_leverage": 5
+            },
+            {
+              "asset": "AZTEC",
+              "mark": 0.023481,
+              "change_24h_pct": 5.7655,
+              "funding_annual_pct": -71.1639,
+              "oi_usd": 1841406.18,
+              "volume_24h_usd": 1554718.9511540001,
+              "max_leverage": 3
+            },
+            {
+              "asset": "TRX",
+              "mark": 0.32413,
+              "change_24h_pct": -1.2912,
+              "funding_annual_pct": -68.842,
+              "oi_usd": 14444655.73,
+              "volume_24h_usd": 1800788.56923,
+              "max_leverage": 10
+            }
+          ],
+          "big_24h_movers": [
+            {
+              "asset": "APE",
+              "mark": 0.167,
+              "change_24h_pct": 62.3724,
+              "funding_annual_pct": -42.0872,
+              "oi_usd": 5985933.74,
+              "volume_24h_usd": 3332302.0838900027,
+              "max_leverage": 5
+            },
+            {
+              "asset": "GRIFFAIN",
+              "mark": 0.020667,
+              "change_24h_pct": 19.906,
+              "funding_annual_pct": 10.95,
+              "oi_usd": 3386311.14,
+              "volume_24h_usd": 1112138.4544729998,
+              "max_leverage": 3
+            },
+            {
+              "asset": "DYDX",
+              "mark": 0.15561,
+              "change_24h_pct": 12.8672,
+              "funding_annual_pct": 10.95,
+              "oi_usd": 3163163.83,
+              "volume_24h_usd": 713469.3530659999,
+              "max_leverage": 5
+            },
+            {
+              "asset": "STABLE",
+              "mark": 0.033169,
+              "change_24h_pct": 11.8194,
+              "funding_annual_pct": 5.6039,
+              "oi_usd": 2960098.35,
+              "volume_24h_usd": 7627516.456668004,
+              "max_leverage": 3
+            },
+            {
+              "asset": "ZEREBRO",
+              "mark": 0.017119,
+              "change_24h_pct": 11.0326,
+              "funding_annual_pct": 374.2387,
+              "oi_usd": 4069400.73,
+              "volume_24h_usd": 152162.958193,
+              "max_leverage": 3
+            }
+          ],
+          "volume_spikes": [
+            {
+              "asset": "BTC",
+              "mark": 77918,
+              "change_24h_pct": -0.5425,
+              "funding_annual_pct": 10.95,
+              "oi_usd": 2206699266.91,
+              "volume_24h_usd": 2620907644.486406,
+              "max_leverage": 40
+            },
+            {
+              "asset": "ETH",
+              "mark": 2319.4,
+              "change_24h_pct": -0.5403,
+              "funding_annual_pct": 8.0262,
+              "oi_usd": 996233324.94,
+              "volume_24h_usd": 966867309.3724992,
+              "max_leverage": 25
+            },
+            {
+              "asset": "SOL",
+              "mark": 86.335,
+              "change_24h_pct": 0.0185,
+              "funding_annual_pct": -11.0131,
+              "oi_usd": 290847891.43,
+              "volume_24h_usd": 231558823.34190992,
+              "max_leverage": 20
+            },
+            {
+              "asset": "HYPE",
+              "mark": 41.141,
+              "change_24h_pct": -1.6683,
+              "funding_annual_pct": -13.7773,
+              "oi_usd": 811135607.95,
+              "volume_24h_usd": 143758150.52496997,
+              "max_leverage": 10
+            },
+            {
+              "asset": "ZEC",
+              "mark": 356.95,
+              "change_24h_pct": 9.77,
+              "funding_annual_pct": 10.95,
+              "oi_usd": 126536012.21,
+              "volume_24h_usd": 104527144.10890001,
+              "max_leverage": 10
+            },
+            {
+              "asset": "CHIP",
+              "mark": 0.088,
+              "change_24h_pct": -7.262,
+              "funding_annual_pct": 10.95,
+              "oi_usd": 24763544.78,
+              "volume_24h_usd": 45511524.04264502,
+              "max_leverage": 3
+            },
+            {
+              "asset": "AAVE",
+              "mark": 94.243,
+              "change_24h_pct": 0.4081,
+              "funding_annual_pct": 10.95,
+              "oi_usd": 60573067.27,
+              "volume_24h_usd": 23042925.627260003,
+              "max_leverage": 10
+            },
+            {
+              "asset": "FARTCOIN",
+              "mark": 0.20097,
+              "change_24h_pct": -0.0398,
+              "funding_annual_pct": 10.95,
+              "oi_usd": 42549189.82,
+              "volume_24h_usd": 19767814.489692014,
+              "max_leverage": 10
+            },
+            {
+              "asset": "XRP",
+              "mark": 1.4464,
+              "change_24h_pct": 1.062,
+              "funding_annual_pct": 10.95,
+              "oi_usd": 85609080.6,
+              "volume_24h_usd": 18767004.256,
+              "max_leverage": 20
+            },
+            {
+              "asset": "TAO",
+              "mark": 247.24,
+              "change_24h_pct": 1.2947,
+              "funding_annual_pct": 10.95,
+              "oi_usd": 39774036.79,
+              "volume_24h_usd": 12553427.931659998,
+              "max_leverage": 5
+            },
+            {
+              "asset": "DOGE",
+              "mark": 0.097995,
+              "change_24h_pct": 0.6626,
+              "funding_annual_pct": 10.95,
+              "oi_usd": 31936355.69,
+              "volume_24h_usd": 11817534.929904997,
+              "max_leverage": 10
+            },
+            {
+              "asset": "kPEPE",
+              "mark": 0.003885,
+              "change_24h_pct": 1.251,
+              "funding_annual_pct": 10.95,
+              "oi_usd": 23885051.26,
+              "volume_24h_usd": 10190277.702894999,
+              "max_leverage": 10
+            },
+            {
+              "asset": "MON",
+              "mark": 0.031324,
+              "change_24h_pct": -4.8105,
+              "funding_annual_pct": 10.95,
+              "oi_usd": 49796826.31,
+              "volume_24h_usd": 9596878.525034012,
+              "max_leverage": 5
+            },
+            {
+              "asset": "STABLE",
+              "mark": 0.033169,
+              "change_24h_pct": 11.8194,
+              "funding_annual_pct": 5.6039,
+              "oi_usd": 2960098.35,
+              "volume_24h_usd": 7627516.456668004,
+              "max_leverage": 3
+            },
+            {
+              "asset": "PENGU",
+              "mark": 0.008575,
+              "change_24h_pct": -1.516,
+              "funding_annual_pct": 10.95,
+              "oi_usd": 14511751.5,
+              "volume_24h_usd": 7364508.308842002,
+              "max_leverage": 5
+            },
+            {
+              "asset": "LIT",
+              "mark": 0.94331,
+              "change_24h_pct": 2.877,
+              "funding_annual_pct": 10.95,
+              "oi_usd": 47235342.67,
+              "volume_24h_usd": 6786147.963720001,
+              "max_leverage": 5
+            },
+            {
+              "asset": "XPL",
+              "mark": 0.10043,
+              "change_24h_pct": 0.6968,
+              "funding_annual_pct": 10.95,
+              "oi_usd": 25421815.37,
+              "volume_24h_usd": 6194309.019719,
+              "max_leverage": 10
+            },
+            {
+              "asset": "XMR",
+              "mark": 371.29,
+              "change_24h_pct": -0.8068,
+              "funding_annual_pct": 91.5708,
+              "oi_usd": 29925101.47,
+              "volume_24h_usd": 5993456.9928899985,
+              "max_leverage": 5
+            },
+            {
+              "asset": "SUI",
+              "mark": 0.95038,
+              "change_24h_pct": 0.1813,
+              "funding_annual_pct": -24.151,
+              "oi_usd": 16568317.06,
+              "volume_24h_usd": 5513853.682395001,
+              "max_leverage": 10
+            },
+            {
+              "asset": "PAXG",
+              "mark": 4712.1,
+              "change_24h_pct": 0.0913,
+              "funding_annual_pct": 10.95,
+              "oi_usd": 39194654.08,
+              "volume_24h_usd": 4491417.948999999,
+              "max_leverage": 10
+            }
+          ],
+          "top_oi": [
+            {
+              "asset": "BTC",
+              "mark": 77918,
+              "change_24h_pct": -0.5425,
+              "funding_annual_pct": 10.95,
+              "oi_usd": 2206699266.91,
+              "volume_24h_usd": 2620907644.486406,
+              "max_leverage": 40
+            },
+            {
+              "asset": "ETH",
+              "mark": 2319.4,
+              "change_24h_pct": -0.5403,
+              "funding_annual_pct": 8.0262,
+              "oi_usd": 996233324.94,
+              "volume_24h_usd": 966867309.3724992,
+              "max_leverage": 25
+            },
+            {
+              "asset": "HYPE",
+              "mark": 41.141,
+              "change_24h_pct": -1.6683,
+              "funding_annual_pct": -13.7773,
+              "oi_usd": 811135607.95,
+              "volume_24h_usd": 143758150.52496997,
+              "max_leverage": 10
+            },
+            {
+              "asset": "SOL",
+              "mark": 86.335,
+              "change_24h_pct": 0.0185,
+              "funding_annual_pct": -11.0131,
+              "oi_usd": 290847891.43,
+              "volume_24h_usd": 231558823.34190992,
+              "max_leverage": 20
+            },
+            {
+              "asset": "ZEC",
+              "mark": 356.95,
+              "change_24h_pct": 9.77,
+              "funding_annual_pct": 10.95,
+              "oi_usd": 126536012.21,
+              "volume_24h_usd": 104527144.10890001,
+              "max_leverage": 10
+            },
+            {
+              "asset": "XRP",
+              "mark": 1.4464,
+              "change_24h_pct": 1.062,
+              "funding_annual_pct": 10.95,
+              "oi_usd": 85609080.6,
+              "volume_24h_usd": 18767004.256,
+              "max_leverage": 20
+            },
+            {
+              "asset": "ASTER",
+              "mark": 0.66858,
+              "change_24h_pct": -0.9085,
+              "funding_annual_pct": 10.95,
+              "oi_usd": 67759410.31,
+              "volume_24h_usd": 1755354.3828999996,
+              "max_leverage": 5
+            },
+            {
+              "asset": "AAVE",
+              "mark": 94.243,
+              "change_24h_pct": 0.4081,
+              "funding_annual_pct": 10.95,
+              "oi_usd": 60573067.27,
+              "volume_24h_usd": 23042925.627260003,
+              "max_leverage": 10
+            },
+            {
+              "asset": "MON",
+              "mark": 0.031324,
+              "change_24h_pct": -4.8105,
+              "funding_annual_pct": 10.95,
+              "oi_usd": 49796826.31,
+              "volume_24h_usd": 9596878.525034012,
+              "max_leverage": 5
+            },
+            {
+              "asset": "LIT",
+              "mark": 0.94331,
+              "change_24h_pct": 2.877,
+              "funding_annual_pct": 10.95,
+              "oi_usd": 47235342.67,
+              "volume_24h_usd": 6786147.963720001,
+              "max_leverage": 5
+            }
+          ]
+        },
+        "headline_summary": "MAVIA funding at +518.8%/yr · APE +62.37% in 24h · BTC volume 3350.1× the HL median"
+      }
+    },
+    {
+      "tool": "explain_market_structure",
+      "pass": true,
+      "args": {
+        "lang": "en"
+      },
+      "duration_ms": 483,
+      "shape_notes": "top-level keys: lang, markdown, structured",
+      "realism_notes": "Markdown length 844.",
+      "broken_or_confusing_behavior": "",
+      "preview": "object{lang, markdown, structured}",
+      "result": {
+        "lang": "en",
+        "markdown": "**Headline**: APE +62.37% · funding -42.1%/yr → reads as **organic rally**.\n\n**Platform**: OI $5.67B, 24h volume $4.38B across 230 perps. Breadth 67% (147 up vs 71 down). OI-weighted funding +5.80%/yr → net neutral.\n\n**Top movers 24h**: APE +62.37% · SKR +27.88% · GRIFFAIN +19.91% · VINE -16.45% · DYDX +12.87%\n\n**Funding extremes**: MAVIA +518.8%/yr · ZEREBRO +374.2%/yr · SKR -337.6%/yr · YZY -121.4%/yr · XMR +91.6%/yr. 160 positive / 31 negative across the board — crowded longs.\n\n**Volume**: BTC $2.62B · ETH $966.87M · SOL $231.56M · HYPE $143.76M · ZEC $104.53M. **OI leaders**: BTC $2.21B · ETH $996.23M · HYPE $811.14M.\n\n**HLP vault**: APR -0.18% (drawdown), 100 followers, deposits open. HLP is the counterparty to taker flow — low APR means market-making is losing money, usually because volatility is high or direction is lopsided.",
+        "structured": {
+          "total_oi_usd": 5667794351.83,
+          "total_volume_usd": 4375737277.47,
+          "perp_count": 230,
+          "breadth_pct": 67.43,
+          "oi_weighted_funding_annual_pct": 5.7987,
+          "positive_funding_count": 160,
+          "negative_funding_count": 31,
+          "top_movers": [
+            {
+              "asset": "APE",
+              "change_24h_pct": 62.3724
+            },
+            {
+              "asset": "SKR",
+              "change_24h_pct": 27.8836
+            },
+            {
+              "asset": "GRIFFAIN",
+              "change_24h_pct": 19.906
+            },
+            {
+              "asset": "VINE",
+              "change_24h_pct": -16.4543
+            },
+            {
+              "asset": "DYDX",
+              "change_24h_pct": 12.8672
+            }
+          ],
+          "hot_funding": [
+            {
+              "asset": "MAVIA",
+              "funding_annual_pct": 518.7977
+            },
+            {
+              "asset": "ZEREBRO",
+              "funding_annual_pct": 374.2387
+            },
+            {
+              "asset": "SKR",
+              "funding_annual_pct": -337.5627
+            },
+            {
+              "asset": "YZY",
+              "funding_annual_pct": -121.4189
+            },
+            {
+              "asset": "XMR",
+              "funding_annual_pct": 91.5708
+            }
+          ],
+          "top_volume": [
+            {
+              "asset": "BTC",
+              "volume_usd": 2620938395.68
+            },
+            {
+              "asset": "ETH",
+              "volume_usd": 966867320.52
+            },
+            {
+              "asset": "SOL",
+              "volume_usd": 231558901.16
+            },
+            {
+              "asset": "HYPE",
+              "volume_usd": 143758150.52
+            },
+            {
+              "asset": "ZEC",
+              "volume_usd": 104527832.04
+            }
+          ],
+          "top_oi": [
+            {
+              "asset": "BTC",
+              "oi_usd": 2206648956.82
+            },
+            {
+              "asset": "ETH",
+              "oi_usd": 996233302.68
+            },
+            {
+              "asset": "HYPE",
+              "oi_usd": 811135607.95
+            }
+          ],
+          "hlp": {
+            "apr": -0.0018039629439393049,
+            "followers": 100
+          },
+          "headline_regime": "healthy-up"
+        }
+      }
+    },
+    {
+      "tool": "asset_snapshot_narrative",
+      "pass": true,
+      "args": {
+        "asset": "HYPE",
+        "lang": "en"
+      },
+      "duration_ms": 390,
+      "shape_notes": "top-level keys: asset, lang, markdown, structured",
+      "realism_notes": "Asset HYPE.",
+      "broken_or_confusing_behavior": "",
+      "preview": "object{asset, lang, markdown, structured}",
+      "result": {
+        "asset": "HYPE",
+        "lang": "en",
+        "markdown": "**HYPE** marks at $41.141, down 1.67% in 24h.\n\nOpen interest $811.14M, 24h volume $143.76M.\n\nFunding runs **-13.78% annualized** (-0.0016%/hr) — funding is in a normal range, no clear directional bias.\n\nMax leverage 10x.",
+        "structured": {
+          "mark_price": 41.141,
+          "change_24h_pct": -1.6683,
+          "funding_annual_pct": -13.7773,
+          "open_interest_usd": 811135607.95,
+          "day_volume_usd": 143758150.52,
+          "max_leverage": 10
+        }
+      }
+    },
+    {
+      "tool": "daily_briefing",
+      "pass": true,
+      "args": {
+        "lang": "en"
+      },
+      "duration_ms": 817,
+      "shape_notes": "top-level keys: lang, date, markdown, summary",
+      "realism_notes": "Markdown length 424.",
+      "broken_or_confusing_behavior": "",
+      "preview": "object{lang, date, markdown, summary}",
+      "result": {
+        "lang": "en",
+        "date": "2026-04-24",
+        "markdown": "# Hyperliquid daily briefing — 2026-04-24\n\n## Highlights\n- **Biggest mover**: **APE** +62.37%\n- **Volume king**: **BTC** ($2.62B in 24h)\n- **Funding extreme**: **MAVIA** at +518.80% annualized\n- **Platform OI**: $5.67B\n- **24h volume**: $4.38B\n\n## Breadth\n- Up: 147\n- Down: 71\n- Flat: 12\n\n## HLP vault\n- APR: **-0.18%**\n- Followers: 100\n- Deposits: open\n\n*Data from HL public API. For analysis only — not investment advice.*",
+        "summary": {
+          "biggest_mover": {
+            "asset": "APE",
+            "change_pct": 62.3724
+          },
+          "top_volume": {
+            "asset": "BTC",
+            "volume_usd": 2621388966.18
+          },
+          "extreme_funding": {
+            "asset": "MAVIA",
+            "funding_annual_pct": 518.7977
+          },
+          "total_oi_usd": 5666939479.6,
+          "total_volume_usd": 4376243692.6
+        }
+      }
+    }
+  ]
+}
