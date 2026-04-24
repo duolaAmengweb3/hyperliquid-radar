@@ -63,6 +63,16 @@ export default function Home() {
         <div className="hero-cta-sub">{t.hero.ctaSub}</div>
       </header>
 
+      <section className="container stats-bar">
+        {t.stats.map((s) => (
+          <div key={s.label} className="stat">
+            <div className="stat-value">{s.value}</div>
+            <div className="stat-label">{s.label}</div>
+            <div className="stat-sub">{s.sub}</div>
+          </div>
+        ))}
+      </section>
+
       <section className="section container">
         <div className="section-eyebrow">{t.features.eyebrow}</div>
         <h2 className="section-title">{t.features.title}</h2>
@@ -119,6 +129,36 @@ export default function Home() {
               </div>
             </div>
           ))}
+        </div>
+      </section>
+
+      <section className="section container">
+        <div className="section-eyebrow">{t.compare.eyebrow}</div>
+        <h2 className="section-title">{t.compare.title}</h2>
+        <p className="section-lead">{t.compare.lead}</p>
+        <div className="compare-wrap">
+          <table className="compare-table">
+            <thead>
+              <tr>
+                <th>{t.compare.headers.name}</th>
+                <th>{t.compare.headers.tools}</th>
+                <th>{t.compare.headers.analysis}</th>
+                <th>{t.compare.headers.seeded}</th>
+                <th>{t.compare.headers.updated}</th>
+              </tr>
+            </thead>
+            <tbody>
+              {t.compare.rows.map((r) => (
+                <tr key={r.name} className={r.highlight ? "highlight" : ""}>
+                  <td className="mono">{r.name}</td>
+                  <td>{r.tools}</td>
+                  <td>{r.analysis}</td>
+                  <td>{r.seeded}</td>
+                  <td>{r.updated}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </div>
       </section>
 
