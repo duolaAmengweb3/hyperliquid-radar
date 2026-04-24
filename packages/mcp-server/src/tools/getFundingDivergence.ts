@@ -1,4 +1,9 @@
-import { HLClient, getBinanceFunding, getBybitFunding, getOkxFunding } from "hyperliquid-radar-core";
+import {
+  HLClient,
+  getBinanceFunding,
+  getBybitFunding,
+  getOkxFunding,
+} from "hyperliquid-radar-core";
 import { z } from "zod";
 import type { ToolDef } from "./index.js";
 
