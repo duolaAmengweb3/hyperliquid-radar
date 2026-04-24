@@ -1,15 +1,20 @@
 import { type HLClearinghouseState, HLClient } from "hyperliquid-radar-core";
 import { z } from "zod";
+import { seedAddressStrings } from "../seeds.js";
 import type { ToolDef } from "./index.js";
 
 export const liquidationHeatmapTool: ToolDef = {
   name: "liquidation_heatmap",
   description:
-    "Build a density map of upcoming liquidations for a given asset by scanning a provided list of addresses. Returns buckets of cumulative USD-at-risk grouped by price band (long / short separated). Useful for 'where are the liq clusters above / below current price'.",
+    "Density map of upcoming liquidations for an asset. Scans HL leaderboard top traders (59 addresses by default) or a custom set, and buckets at-risk USD by price band. Answers 'where are the liq clusters above and below current price'.",
   inputSchema: {
     type: "object",
     properties: {
-      addresses: { type: "array", items: { type: "string" } },
+      addresses: {
+        type: "array",
+        items: { type: "string" },
+        description: "Optional. Defaults to HL leaderboard top traders.",
+      },
       asset: { type: "string", description: "Coin symbol (BTC / ETH / HYPE …)." },
       bucket_pct: {
         type: "number",
@@ -22,19 +27,21 @@ export const liquidationHeatmapTool: ToolDef = {
         default: 15,
       },
     },
-    required: ["addresses", "asset"],
+    required: ["asset"],
   },
 };
 
 const inputSchema = z.object({
-  addresses: z.array(z.string().min(1)).min(1).max(200),
+  addresses: z.array(z.string().min(1)).max(200).optional(),
   asset: z.string().min(1),
   bucket_pct: z.number().min(0.1).max(5).default(0.5),
   range_pct: z.number().min(1).max(50).default(15),
 });
 
 export async function handleLiquidationHeatmap(rawArgs: Record<string, unknown>): Promise<unknown> {
-  const { addresses, asset, bucket_pct, range_pct } = inputSchema.parse(rawArgs);
+  const parsed = inputSchema.parse(rawArgs);
+  const addresses = parsed.addresses ?? seedAddressStrings();
+  const { asset, bucket_pct, range_pct } = parsed;
   const client = new HLClient();
   const [mids, ...states] = await Promise.all([
     client.getAllMids(),

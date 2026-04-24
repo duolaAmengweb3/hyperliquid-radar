@@ -1,28 +1,35 @@
 import { type HLClearinghouseState, HLClient } from "hyperliquid-radar-core";
 import { z } from "zod";
+import { seedAddressStrings } from "../seeds.js";
 import type { ToolDef } from "./index.js";
 
 export const smartMoneyFlowTool: ToolDef = {
   name: "smart_money_flow",
   description:
-    "Aggregate current positions of a provided address set on a specific asset. Returns total long vs short USD, net bias, and the top long/short positions. Use this with a KOL address list to see 'which side are the smart traders on BTC right now'.",
+    "Aggregate current positions of a curated smart-money address set on a specific asset. Returns total long vs short USD, net bias, and top positions. Defaults to 59 addresses from HL's public leaderboard (top allTime + month + week PnL) when no addresses are provided — pass your own `addresses` for custom crowds.",
   inputSchema: {
     type: "object",
     properties: {
-      addresses: { type: "array", items: { type: "string" } },
+      addresses: {
+        type: "array",
+        items: { type: "string" },
+        description: "Optional. Defaults to 59 HL leaderboard top traders if omitted.",
+      },
       asset: { type: "string" },
     },
-    required: ["addresses", "asset"],
+    required: ["asset"],
   },
 };
 
 const inputSchema = z.object({
-  addresses: z.array(z.string().min(1)).min(1).max(200),
+  addresses: z.array(z.string().min(1)).max(200).optional(),
   asset: z.string().min(1),
 });
 
 export async function handleSmartMoneyFlow(rawArgs: Record<string, unknown>): Promise<unknown> {
-  const { addresses, asset } = inputSchema.parse(rawArgs);
+  const parsed = inputSchema.parse(rawArgs);
+  const addresses = parsed.addresses ?? seedAddressStrings();
+  const asset = parsed.asset;
   const client = new HLClient();
   const states = await Promise.all(
     addresses.map((a) =>

@@ -1,30 +1,36 @@
 import { HLClient } from "hyperliquid-radar-core";
 import { z } from "zod";
+import { seedAddressStrings } from "../seeds.js";
 import type { ToolDef } from "./index.js";
 
 export const getWhaleFlowsTool: ToolDef = {
   name: "get_whale_flows",
   description:
-    "Scan a list of addresses for recent large fills (≥ min_size_usd) in the last N hours. Returns a time-sorted stream of {address, asset, side, size, price, pnl} — useful for 'who moved the market in the last few hours'.",
+    "Time-sorted large fills across a set of HL addresses. Default address set: 59 leaderboard top traders (pass your own `addresses` for a custom crowd). Returns {address, asset, side, size, price, pnl} for every fill ≥ min_size_usd in the last N hours — answers 'which whales moved the market recently'.",
   inputSchema: {
     type: "object",
     properties: {
-      addresses: { type: "array", items: { type: "string" } },
+      addresses: {
+        type: "array",
+        items: { type: "string" },
+        description: "Optional. Defaults to HL leaderboard top traders.",
+      },
       hours: { type: "number", default: 24 },
       min_size_usd: { type: "number", default: 1_000_000 },
     },
-    required: ["addresses"],
   },
 };
 
 const inputSchema = z.object({
-  addresses: z.array(z.string().min(1)).min(1).max(100),
+  addresses: z.array(z.string().min(1)).max(100).optional(),
   hours: z.number().min(1).max(168).default(24),
   min_size_usd: z.number().min(1000).default(1_000_000),
 });
 
 export async function handleGetWhaleFlows(rawArgs: Record<string, unknown>): Promise<unknown> {
-  const { addresses, hours, min_size_usd } = inputSchema.parse(rawArgs);
+  const parsed = inputSchema.parse(rawArgs);
+  const addresses = (parsed.addresses ?? seedAddressStrings()).slice(0, 100);
+  const { hours, min_size_usd } = parsed;
   const client = new HLClient();
   const cutoff = Date.now() - hours * 60 * 60 * 1000;
 

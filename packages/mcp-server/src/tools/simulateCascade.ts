@@ -1,27 +1,32 @@
 import { type HLClearinghouseState, HLClient } from "hyperliquid-radar-core";
 import { z } from "zod";
+import { seedAddressStrings } from "../seeds.js";
 import type { ToolDef } from "./index.js";
 
 export const simulateCascadeTool: ToolDef = {
   name: "simulate_cascade",
   description:
-    "Simulate a price shock and estimate the cascade of liquidations it would trigger across a provided address list. Iterates 3 waves: each wave's liquidation flow impacts price via orderbook depth, which triggers more liquidations. Returns waves, total USD liquidated, and top losers. Estimate only — not a prediction.",
+    "Simulate a price shock and estimate the cascade of liquidations it triggers. Scans HL leaderboard top traders (59 addresses by default) or a custom set. Iterates 3 waves: each wave's liquidation flow impacts price via orderbook depth, triggering more liquidations. Returns waves, total USD liquidated, and top losers. Estimate only.",
   inputSchema: {
     type: "object",
     properties: {
-      addresses: { type: "array", items: { type: "string" } },
+      addresses: {
+        type: "array",
+        items: { type: "string" },
+        description: "Optional. Defaults to HL leaderboard top traders.",
+      },
       asset: { type: "string" },
       stress_pct: {
         type: "number",
         description: "Instant price shock in %. Negative = drop (e.g. -5 for 5% down).",
       },
     },
-    required: ["addresses", "asset", "stress_pct"],
+    required: ["asset", "stress_pct"],
   },
 };
 
 const inputSchema = z.object({
-  addresses: z.array(z.string().min(1)).min(1).max(200),
+  addresses: z.array(z.string().min(1)).max(200).optional(),
   asset: z.string().min(1),
   stress_pct: z.number().min(-50).max(50),
 });
@@ -35,7 +40,9 @@ interface CascadePosition {
 }
 
 export async function handleSimulateCascade(rawArgs: Record<string, unknown>): Promise<unknown> {
-  const { addresses, asset, stress_pct } = inputSchema.parse(rawArgs);
+  const parsed = inputSchema.parse(rawArgs);
+  const addresses = parsed.addresses ?? seedAddressStrings();
+  const { asset, stress_pct } = parsed;
   const client = new HLClient();
   const [mids, book, ...states] = await Promise.all([
     client.getAllMids(),
