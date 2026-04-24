@@ -1,10 +1,16 @@
 # hyperliquid-radar 产品需求文档(PRD)
 
-**版本**:v1.1(一次性定稿版)
+**版本**:v1.2(砍掉告警模块)
 **日期**:2026-04-24
 **所有者**:cexagent
 **产品级别**:矩阵旗舰 · Tier S · L4 · 4-5 周交付
 **上位文档**:`../docs/products.md`(cexagent 产品矩阵全景)
+
+> **v1.2 变更**:**Module E(订阅告警)整体删除**。连带 `alert-api`、`alert-daemon`、TG bot、Discord bot、docker-compose、SQLite schema 全部移除。剩下 4 个模块,19 个工具。
+>
+> 原因:告警推送意味着我们要跑常驻后端、管 TG token、维护 SQLite,且 push 场景和 agent-native 哲学有张力(用户真想要告警时,让自己的 agent 定期调 radar 就够了)。
+>
+> 本 PRD 下文中 `§2` / `§4.5` / `§5.2` / `§5.5` / `§5.6` 里关于 alert / bot / daemon / subscription / DB 的内容**已作废**,保留仅作历史记录。
 
 ---
 

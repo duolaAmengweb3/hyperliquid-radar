@@ -25,22 +25,6 @@ import { handleLiquidationHeatmap, liquidationHeatmapTool } from "./liquidationH
 import { handleMyPositionRisk, myPositionRiskTool } from "./myPositionRisk.js";
 import { handleSimulateCascade, simulateCascadeTool } from "./simulateCascade.js";
 import { handleSmartMoneyFlow, smartMoneyFlowTool } from "./smartMoneyFlow.js";
-import {
-  cancelSubscriptionTool,
-  extendSubscriptionTool,
-  handleCancelSubscription,
-  handleExtendSubscription,
-  handleSubscribeCascadeRisk,
-  handleSubscribeFundingExtreme,
-  handleSubscribeLiqThreshold,
-  handleSubscribeWallet,
-  handleSubscribeWhaleEntry,
-  subscribeCascadeRiskTool,
-  subscribeFundingExtremeTool,
-  subscribeLiqThresholdTool,
-  subscribeWalletTool,
-  subscribeWhaleEntryTool,
-} from "./subscriptions.js";
 
 export interface ToolDef {
   name: string;
@@ -71,14 +55,6 @@ export const tools: ToolDef[] = [
   explainMarketStructureTool,
   assetSnapshotNarrativeTool,
   dailyBriefingTool,
-  // E. Alert Subscriptions
-  subscribeWalletTool,
-  subscribeLiqThresholdTool,
-  subscribeWhaleEntryTool,
-  subscribeCascadeRiskTool,
-  subscribeFundingExtremeTool,
-  cancelSubscriptionTool,
-  extendSubscriptionTool,
 ];
 
 export const toolHandlers: Record<string, ToolHandler> = {
@@ -97,11 +73,4 @@ export const toolHandlers: Record<string, ToolHandler> = {
   [explainMarketStructureTool.name]: handleExplainMarketStructure,
   [assetSnapshotNarrativeTool.name]: handleAssetSnapshotNarrative,
   [dailyBriefingTool.name]: handleDailyBriefing,
-  [subscribeWalletTool.name]: handleSubscribeWallet,
-  [subscribeLiqThresholdTool.name]: handleSubscribeLiqThreshold,
-  [subscribeWhaleEntryTool.name]: handleSubscribeWhaleEntry,
-  [subscribeCascadeRiskTool.name]: handleSubscribeCascadeRisk,
-  [subscribeFundingExtremeTool.name]: handleSubscribeFundingExtreme,
-  [cancelSubscriptionTool.name]: handleCancelSubscription,
-  [extendSubscriptionTool.name]: handleExtendSubscription,
 };

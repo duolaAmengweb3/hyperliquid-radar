@@ -87,31 +87,11 @@ const commonModules: Module[] = [
       { name: "daily_briefing", ready: true },
     ],
   },
-  {
-    letter: "E",
-    name: "",
-    count: 7,
-    tools: [
-      { name: "subscribe_wallet", ready: true },
-      { name: "subscribe_liq_threshold", ready: true },
-      { name: "subscribe_whale_entry", ready: true },
-      { name: "subscribe_cascade_risk", ready: true },
-      { name: "subscribe_funding_extreme", ready: true },
-      { name: "cancel_subscription", ready: true },
-      { name: "extend_subscription", ready: true },
-    ],
-  },
 ];
 
-const moduleNamesEn = [
-  "Liquidation Risk",
-  "Whales & Flow",
-  "Market Structure",
-  "Narrative",
-  "Alerts & Subscriptions",
-];
+const moduleNamesEn = ["Liquidation Risk", "Whales & Flow", "Market Structure", "Narrative"];
 
-const moduleNamesZh = ["清算风险", "鲸鱼与仓位流", "市场结构", "叙事总结", "订阅告警"];
+const moduleNamesZh = ["清算风险", "鲸鱼与仓位流", "市场结构", "叙事总结"];
 
 export const strings: Record<Lang, Strings> = {
   en: {
@@ -120,7 +100,7 @@ export const strings: Record<Lang, Strings> = {
       eyebrow: "Part of cexagent · MIT open source",
       title: "Your agent now speaks",
       titleAccent: "Hyperliquid.",
-      sub: "Ask Claude, Cursor, Eliza anything about HL — liquidation risks, whale flows, funding divergence, market narrative, wallet alerts. No dashboards. No accounts. No API keys. Just talk.",
+      sub: "Ask Claude, Cursor, Eliza anything about HL — liquidation risks, whale flows, funding divergence, market narrative. No dashboards. No accounts. No API keys. Just talk.",
       cta: "Install in 30 seconds",
       ctaSub: "stdio MCP · Node 20+ · zero user data",
     },
@@ -129,23 +109,23 @@ export const strings: Record<Lang, Strings> = {
       title: "A terminal built for agents, not humans.",
       items: [
         {
-          title: "23 tools, 5 modules",
-          desc: "Liquidation risk, whales, market structure, narrative, alerts — all under one install. No tab-switching to Hyperdash.",
+          title: "19 tools, 4 modules",
+          desc: "Liquidation risk, whales, market structure, narrative — all under one install. No tab-switching to Hyperdash.",
         },
         {
           title: "Agent-native protocol",
           desc: "MCP stdio server. Works in Claude Desktop, Cursor, Eliza out of the box. Paste a config, restart, talk.",
         },
         {
-          title: "Zero user identity",
-          desc: "No accounts, no login, no tokens. Subscriptions store only push destination with 30-day TTL. No PII.",
+          title: "Zero data collected",
+          desc: "No accounts. No login. No API keys. Queries go straight from your agent to Hyperliquid's public API — nothing through our servers.",
         },
       ],
     },
     modules: {
       eyebrow: "Tool matrix",
-      title: "Five modules. One install. All open source.",
-      lead: "Each module covers a different shape of HL intelligence. Ship progresses module by module — check the dots.",
+      title: "Four modules. One install. All open source.",
+      lead: "Each module covers a different shape of HL intelligence. Ship progresses tool by tool — check the dots.",
       items: commonModules.map((m, i) => ({ ...m, name: moduleNamesEn[i] })),
     },
     examples: {
@@ -165,7 +145,7 @@ export const strings: Record<Lang, Strings> = {
           q: "List the 20 perps with the most extreme funding right now.",
           tool: "get_all_asset_ctxs",
         },
-        { q: "How is the HLP vault doing this week?", tool: "hlp_metrics" },
+        { q: "Give me today's HL briefing.", tool: "daily_briefing" },
       ],
     },
     install: {
@@ -180,8 +160,8 @@ export const strings: Record<Lang, Strings> = {
     },
     privacy: {
       eyebrow: "Privacy",
-      title: "We don't know who you are. By design.",
-      body: "No accounts. No login. No API keys. Queries hit Hyperliquid's public API directly from your agent's host. When the alert module ships, subscription records will store only the push destination (Telegram chat_id or webhook URL) plus criteria — no user identity column. 30-day auto-expiry. Source-available on GitHub.",
+      title: "Nothing to collect. Nothing to leak.",
+      body: "The MCP server runs as a subprocess of your agent. Every tool call goes directly from your machine to Hyperliquid's public API. We run no backend. We see no requests. We have no user data to sell, leak, or subpoena. Source-available on GitHub, MIT license.",
     },
     footer: {
       matrix: "Part of cexagent — a matrix of agent-native crypto tools.",
@@ -194,7 +174,7 @@ export const strings: Record<Lang, Strings> = {
       eyebrow: "cexagent 矩阵 · MIT 开源",
       title: "让你的 agent 真正会用",
       titleAccent: "Hyperliquid。",
-      sub: "让 Claude、Cursor、Eliza 直接回答 HL 的一切——清算风险、鲸鱼流、funding 偏差、市场叙事、钱包告警。不用开网页、不用注册、不用 API key,一句话就行。",
+      sub: "让 Claude、Cursor、Eliza 直接回答 HL 的一切——清算风险、鲸鱼流、funding 偏差、市场叙事。不用开网页、不用注册、不用 API key,一句话就行。",
       cta: "30 秒装好",
       ctaSub: "stdio MCP · Node 20+ · 零用户数据",
     },
@@ -203,23 +183,23 @@ export const strings: Record<Lang, Strings> = {
       title: "为 agent 而生的终端,不是为人。",
       items: [
         {
-          title: "23 个工具 5 个模块",
-          desc: "清算风险、鲸鱼、市场结构、叙事、告警——一次装完。再也不用开 Hyperdash 网页。",
+          title: "19 个工具 4 个模块",
+          desc: "清算风险、鲸鱼、市场结构、叙事——一次装完。再也不用开 Hyperdash 网页。",
         },
         {
           title: "Agent-native 协议",
           desc: "MCP stdio 服务。Claude Desktop / Cursor / Eliza 开箱即用。粘一行 config、重启、开始对话。",
         },
         {
-          title: "零用户身份",
-          desc: "不注册、不登录、不收 token。订阅只存推送目标和 30 天 TTL,不关联任何 PII。",
+          title: "零数据收集",
+          desc: "不注册、不登录、不收 API key。请求直接从你 agent 所在机器打 HL 公开接口,不过我们任何服务器。",
         },
       ],
     },
     modules: {
       eyebrow: "工具矩阵",
-      title: "五个模块。一次安装。全部开源。",
-      lead: "每个模块覆盖 HL 情报的一个维度。按模块逐步发布——看亮点小圆点。",
+      title: "四个模块。一次安装。全部开源。",
+      lead: "每个模块覆盖 HL 情报的一个维度。逐步发布——看亮点小圆点。",
       items: commonModules.map((m, i) => ({ ...m, name: moduleNamesZh[i] })),
     },
     examples: {
@@ -233,7 +213,7 @@ export const strings: Record<Lang, Strings> = {
         },
         { q: "给我看一下 HYPE 的情况 —— funding、OI、24h 涨跌。", tool: "asset_snapshot" },
         { q: "列出现在 funding 最极端的 20 个 perp。", tool: "get_all_asset_ctxs" },
-        { q: "HLP 这周表现怎么样?", tool: "hlp_metrics" },
+        { q: "给我今天的 HL 日报。", tool: "daily_briefing" },
       ],
     },
     install: {
@@ -248,8 +228,8 @@ export const strings: Record<Lang, Strings> = {
     },
     privacy: {
       eyebrow: "隐私",
-      title: "我们不知道你是谁。设计如此。",
-      body: "不注册、不登录、不收 API key。请求直接从你 agent 所在机器打 Hyperliquid 公开接口。告警模块上线后,订阅记录只存推送目标(Telegram chat_id 或 webhook URL)和触发条件——没有用户身份这一列。30 天自动过期。代码 MIT,GitHub 可查。",
+      title: "无数据可收集。无数据可泄露。",
+      body: "MCP server 作为你 agent 的子进程运行。每次工具调用都从你的机器直接打 Hyperliquid 公开 API。我们没有后端、看不到任何请求、没有任何用户数据可以贩卖、泄露或被传唤。代码 MIT 开源。",
     },
     footer: {
       matrix: "cexagent 矩阵成员 —— 一组 agent-native 的加密工具。",
