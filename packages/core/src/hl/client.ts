@@ -65,6 +65,26 @@ export interface HLL2Book {
   levels: [HLL2Level[], HLL2Level[]];
 }
 
+export interface HLUserFill {
+  coin: string;
+  /** Fill price. */
+  px: string;
+  /** Size (unsigned). */
+  sz: string;
+  /** "B" = buy (opens long or closes short), "A" = sell (opens short or closes long). */
+  side: "B" | "A";
+  /** ms timestamp. */
+  time: number;
+  /** Realized PnL on this fill. */
+  closedPnl: string;
+  /** Hash / hash-like fill id. */
+  hash: string;
+  /** "Open"/"Close"/"Liquidation"/etc. */
+  dir?: string;
+  /** Starting position size in base after this fill. */
+  startPosition?: string;
+}
+
 export interface HLVaultDetails {
   name: string;
   vaultAddress: string;
@@ -178,6 +198,10 @@ export class HLClient {
 
   getL2Book(coin: string): Promise<HLL2Book> {
     return this.info<HLL2Book>({ type: "l2Book", coin });
+  }
+
+  getUserFills(user: string): Promise<HLUserFill[]> {
+    return this.info<HLUserFill[]>({ type: "userFills", user });
   }
 }
 

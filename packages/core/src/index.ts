@@ -13,6 +13,7 @@ export {
   type HLL2Book,
   type HLL2Level,
   type HLMetaAndAssetCtxs,
+  type HLUserFill,
   type HLVaultDetails,
 } from "./hl/client.js";
 export { getBinanceFunding, getBybitFunding, getOkxFunding } from "./cex/funding.js";

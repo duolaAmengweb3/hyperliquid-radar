@@ -8,14 +8,25 @@ Ask Claude / Cursor / Eliza anything about HL — liquidation risks, whale flows
 funding divergence, market narrative, wallet alerts. No more tab-switching to
 Hyperdash.
 
-**Status**: 5/23 tools implemented. See [PRD.md](./PRD.md) for the full spec.
+**Status**: 22/26 tools implemented (+ alert-api + alert-daemon self-host stack). See [PRD.md](./PRD.md) for the full spec.
 
-**Ready now**:
-- `get_top_liquidation_risks` — scan a list of HL wallet addresses, rank by proximity to liq
-- `get_funding_divergence` — HL vs Binance / Bybit / OKX funding for any asset
-- `asset_snapshot` — one-call overview: price, funding, OI, 24h volume, impact prices
-- `get_all_asset_ctxs` — full perp universe, sortable by volume / funding / OI / 24h change
-- `hlp_metrics` — HLP vault APR, TVL, follower count, deposit status
+**Modules**:
+- **A Liquidation Risk** (4/5): `get_top_liquidation_risks`, `liquidation_heatmap`, `simulate_cascade`, `my_position_risk` · pending: `historical_cascade_replay` (needs position snapshot DB)
+- **B Whales & Flow** (3/5): `get_whale_flows`, `address_position_history`, `smart_money_flow` · pending: `new_whale_entries` (needs fill indexing), `whale_pnl_leaderboard` (no public HL leaderboard endpoint)
+- **C Market Structure** (5/6): `get_funding_divergence`, `asset_snapshot`, `get_all_asset_ctxs`, `hlp_metrics`, `orderbook_imbalance` · pending: `insurance_fund_status` (HL API endpoint TBD)
+- **D Narrative** (3/3): `explain_market_structure`, `asset_snapshot_narrative`, `daily_briefing`
+- **E Alert Subscriptions** (7/7): 5 subscribe flavours + cancel + extend — all POST to `alert-api`
+
+## Self-host the alert backend (optional)
+
+`apps/landing` runs on Vercel. The alert service is Docker-composed on your own VPS:
+
+```bash
+cd deploy
+TG_BOT_TOKEN=xxx docker compose up -d
+```
+
+This brings up `alert-api` (port 3200) + `alert-daemon` (polls HL every 60s) sharing a SQLite volume.
 
 ## Install
 

@@ -11,5 +11,6 @@ export {
   type HLL2Book,
   type HLL2Level,
   type HLMetaAndAssetCtxs,
+  type HLUserFill,
   type HLVaultDetails,
 } from "./client.js";
