@@ -1,6 +1,11 @@
 export * from "./types.js";
 export { MemoryCache, type CacheOptions } from "./cache.js";
 export {
+  CachedHLClient,
+  getSharedHLClient,
+  type CachedHLClientOptions,
+} from "./hl/cached.js";
+export {
   HL_VAULTS,
   HLClient,
   type HLAllMids,

@@ -1,4 +1,4 @@
-import { HLClient, HL_VAULTS } from "@cexagent/core";
+import { HLClient, HL_VAULTS } from "hyperliquid-radar-core";
 import type { ToolDef } from "./index.js";
 
 export const getHlpMetricsTool: ToolDef = {

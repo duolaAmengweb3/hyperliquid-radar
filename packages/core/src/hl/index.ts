@@ -1,3 +1,4 @@
+export { CachedHLClient, getSharedHLClient, type CachedHLClientOptions } from "./cached.js";
 export {
   HL_VAULTS,
   HLClient,

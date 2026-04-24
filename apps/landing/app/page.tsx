@@ -8,12 +8,12 @@ const CLAUDE_DESKTOP_CONFIG = `{
   "mcpServers": {
     "hyperliquid-radar": {
       "command": "npx",
-      "args": ["@cexagent/hyperliquid-radar"]
+      "args": ["hyperliquid-radar"]
     }
   }
 }`;
 
-const CURSOR_CONFIG = "mcp add @cexagent/hyperliquid-radar";
+const CURSOR_CONFIG = "mcp add hyperliquid-radar";
 
 export default function Home() {
   const [lang, setLang] = useState<Lang>("en");

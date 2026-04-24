@@ -1,4 +1,4 @@
-import { type HLClearinghouseState, HLClient } from "@cexagent/core";
+import { type HLClearinghouseState, HLClient } from "hyperliquid-radar-core";
 import { z } from "zod";
 import type { ToolDef } from "./index.js";
 

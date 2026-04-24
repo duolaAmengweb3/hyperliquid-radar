@@ -1,10 +1,10 @@
 {
-  "name": "@cexagent/core",
+  "name": "hyperliquid-radar-core",
   "version": "0.1.0",
   "description": "Shared HL / CEX data clients, cache, and types for cexagent products",
   "license": "MIT",
-  "private": true,
   "type": "module",
+  "publishConfig": { "access": "public" },
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "exports": {
@@ -30,7 +30,6 @@
   },
   "dependencies": {
     "lru-cache": "^11.0.2",
-    "undici": "^7.2.0",
     "zod": "^3.24.1"
   },
   "devDependencies": {

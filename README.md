@@ -27,7 +27,7 @@ Add to `~/Library/Application Support/Claude/claude_desktop_config.json`:
   "mcpServers": {
     "hyperliquid-radar": {
       "command": "npx",
-      "args": ["@cexagent/hyperliquid-radar"]
+      "args": ["hyperliquid-radar"]
     }
   }
 }
@@ -36,7 +36,7 @@ Add to `~/Library/Application Support/Claude/claude_desktop_config.json`:
 ### Cursor
 
 ```bash
-mcp add @cexagent/hyperliquid-radar
+mcp add hyperliquid-radar
 ```
 
 ## Development
@@ -57,7 +57,7 @@ node packages/mcp-server/dist/index.js
 ```
 packages/
   core/           # shared HL / CEX data clients, cache, types
-  mcp-server/     # @cexagent/hyperliquid-radar npm package (stdio MCP server)
+  mcp-server/     # hyperliquid-radar npm package (stdio MCP server)
 apps/
   landing/        # hyperliquid-radar.vercel.app (Next.js 15, bilingual)
 ```

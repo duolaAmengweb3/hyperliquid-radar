@@ -43,12 +43,14 @@ const commonModules: Module[] = [
   {
     letter: "A",
     name: "",
-    count: 5,
+    count: 7,
     tools: [
       { name: "get_top_liquidation_risks", ready: true },
       { name: "liquidation_heatmap", ready: true },
       { name: "simulate_cascade", ready: true },
       { name: "my_position_risk", ready: true },
+      { name: "simulate_my_liq_price", ready: true },
+      { name: "get_recent_liquidations", ready: true },
       { name: "historical_cascade_replay", ready: false },
     ],
   },
@@ -67,13 +69,14 @@ const commonModules: Module[] = [
   {
     letter: "C",
     name: "",
-    count: 6,
+    count: 7,
     tools: [
       { name: "get_funding_divergence", ready: true },
       { name: "asset_snapshot", ready: true },
       { name: "get_all_asset_ctxs", ready: true },
       { name: "hlp_metrics", ready: true },
       { name: "orderbook_imbalance", ready: true },
+      { name: "compare_perps", ready: true },
       { name: "insurance_fund_status", ready: false },
     ],
   },
@@ -109,7 +112,7 @@ export const strings: Record<Lang, Strings> = {
       title: "A terminal built for agents, not humans.",
       items: [
         {
-          title: "19 tools, 4 modules",
+          title: "21 tools, 4 modules",
           desc: "Liquidation risk, whales, market structure, narrative — all under one install. No tab-switching to Hyperdash.",
         },
         {
@@ -183,7 +186,7 @@ export const strings: Record<Lang, Strings> = {
       title: "为 agent 而生的终端,不是为人。",
       items: [
         {
-          title: "19 个工具 4 个模块",
+          title: "21 个工具 4 个模块",
           desc: "清算风险、鲸鱼、市场结构、叙事——一次装完。再也不用开 Hyperdash 网页。",
         },
         {

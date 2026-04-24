@@ -6,6 +6,7 @@ import {
   assetSnapshotNarrativeTool,
   handleAssetSnapshotNarrative,
 } from "./assetSnapshotNarrative.js";
+import { comparePerpsTool, handleComparePerps } from "./comparePerps.js";
 import { dailyBriefingTool, handleDailyBriefing } from "./dailyBriefing.js";
 import {
   explainMarketStructureTool,
@@ -16,6 +17,7 @@ import { getAssetSnapshotTool, handleGetAssetSnapshot } from "./getAssetSnapshot
 import { getFundingDivergenceTool, handleGetFundingDivergence } from "./getFundingDivergence.js";
 import { getHlpMetricsTool, handleGetHlpMetrics } from "./getHlpMetrics.js";
 import { getOrderbookImbalanceTool, handleGetOrderbookImbalance } from "./getOrderbookImbalance.js";
+import { getRecentLiquidationsTool, handleGetRecentLiquidations } from "./getRecentLiquidations.js";
 import {
   getTopLiquidationRisksTool,
   handleGetTopLiquidationRisks,
@@ -24,6 +26,7 @@ import { getWhaleFlowsTool, handleGetWhaleFlows } from "./getWhaleFlows.js";
 import { handleLiquidationHeatmap, liquidationHeatmapTool } from "./liquidationHeatmap.js";
 import { handleMyPositionRisk, myPositionRiskTool } from "./myPositionRisk.js";
 import { handleSimulateCascade, simulateCascadeTool } from "./simulateCascade.js";
+import { handleSimulateMyLiqPrice, simulateMyLiqPriceTool } from "./simulateMyLiqPrice.js";
 import { handleSmartMoneyFlow, smartMoneyFlowTool } from "./smartMoneyFlow.js";
 
 export interface ToolDef {
@@ -34,13 +37,14 @@ export interface ToolDef {
 
 export type ToolHandler = (args: Record<string, unknown>) => Promise<unknown>;
 
-// Organised by PRD module order for legibility.
 export const tools: ToolDef[] = [
   // A. Liquidation Risk
   getTopLiquidationRisksTool,
   liquidationHeatmapTool,
   simulateCascadeTool,
   myPositionRiskTool,
+  simulateMyLiqPriceTool,
+  getRecentLiquidationsTool,
   // B. Whales & Flow
   getWhaleFlowsTool,
   addressPositionHistoryTool,
@@ -51,6 +55,7 @@ export const tools: ToolDef[] = [
   getAllAssetCtxsTool,
   getHlpMetricsTool,
   getOrderbookImbalanceTool,
+  comparePerpsTool,
   // D. Narrative
   explainMarketStructureTool,
   assetSnapshotNarrativeTool,
@@ -62,6 +67,8 @@ export const toolHandlers: Record<string, ToolHandler> = {
   [liquidationHeatmapTool.name]: handleLiquidationHeatmap,
   [simulateCascadeTool.name]: handleSimulateCascade,
   [myPositionRiskTool.name]: handleMyPositionRisk,
+  [simulateMyLiqPriceTool.name]: handleSimulateMyLiqPrice,
+  [getRecentLiquidationsTool.name]: handleGetRecentLiquidations,
   [getWhaleFlowsTool.name]: handleGetWhaleFlows,
   [addressPositionHistoryTool.name]: handleAddressPositionHistory,
   [smartMoneyFlowTool.name]: handleSmartMoneyFlow,
@@ -70,6 +77,7 @@ export const toolHandlers: Record<string, ToolHandler> = {
   [getAllAssetCtxsTool.name]: handleGetAllAssetCtxs,
   [getHlpMetricsTool.name]: handleGetHlpMetrics,
   [getOrderbookImbalanceTool.name]: handleGetOrderbookImbalance,
+  [comparePerpsTool.name]: handleComparePerps,
   [explainMarketStructureTool.name]: handleExplainMarketStructure,
   [assetSnapshotNarrativeTool.name]: handleAssetSnapshotNarrative,
   [dailyBriefingTool.name]: handleDailyBriefing,

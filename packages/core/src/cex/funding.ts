@@ -1,18 +1,11 @@
-import { request } from "undici";
 import type { FundingRate } from "../types.js";
 
-/**
- * Fetch the current funding rate from Binance USDT-M perp.
- * No auth. Limit: 1200 req/min per IP.
- */
 export async function getBinanceFunding(symbol: string): Promise<FundingRate> {
-  const res = await request(
+  const res = await fetch(
     `https://fapi.binance.com/fapi/v1/premiumIndex?symbol=${encodeURIComponent(symbol)}`,
   );
-  if (res.statusCode !== 200) {
-    throw new Error(`Binance premiumIndex ${res.statusCode}`);
-  }
-  const data = (await res.body.json()) as {
+  if (!res.ok) throw new Error(`Binance premiumIndex ${res.status}`);
+  const data = (await res.json()) as {
     lastFundingRate: string;
     nextFundingTime: number;
   };
@@ -24,17 +17,12 @@ export async function getBinanceFunding(symbol: string): Promise<FundingRate> {
   };
 }
 
-/**
- * Fetch the current funding rate from Bybit linear perp.
- */
 export async function getBybitFunding(symbol: string): Promise<FundingRate> {
-  const res = await request(
+  const res = await fetch(
     `https://api.bybit.com/v5/market/tickers?category=linear&symbol=${encodeURIComponent(symbol)}`,
   );
-  if (res.statusCode !== 200) {
-    throw new Error(`Bybit tickers ${res.statusCode}`);
-  }
-  const data = (await res.body.json()) as {
+  if (!res.ok) throw new Error(`Bybit tickers ${res.status}`);
+  const data = (await res.json()) as {
     result: { list: Array<{ fundingRate: string; nextFundingTime: string }> };
   };
   const row = data.result?.list?.[0];
@@ -47,18 +35,12 @@ export async function getBybitFunding(symbol: string): Promise<FundingRate> {
   };
 }
 
-/**
- * Fetch the current funding rate from OKX perp swap.
- * OKX uses inst-id like `BTC-USDT-SWAP`.
- */
 export async function getOkxFunding(instId: string): Promise<FundingRate> {
-  const res = await request(
+  const res = await fetch(
     `https://www.okx.com/api/v5/public/funding-rate?instId=${encodeURIComponent(instId)}`,
   );
-  if (res.statusCode !== 200) {
-    throw new Error(`OKX funding-rate ${res.statusCode}`);
-  }
-  const data = (await res.body.json()) as {
+  if (!res.ok) throw new Error(`OKX funding-rate ${res.status}`);
+  const data = (await res.json()) as {
     data: Array<{ fundingRate: string; nextFundingTime: string }>;
   };
   const row = data.data?.[0];

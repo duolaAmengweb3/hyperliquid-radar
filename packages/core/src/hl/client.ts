@@ -1,5 +1,3 @@
-import { request } from "undici";
-
 const HL_API_BASE = "https://api.hyperliquid.xyz";
 
 export type HLInfoRequest =
@@ -16,93 +14,48 @@ export type HLInfoRequest =
     };
 
 export interface HLAssetMeta {
-  /** Asset name, e.g. "BTC". */
   name: string;
-  /** Perp sizes are rounded to this many decimals. */
   szDecimals: number;
-  /** Max leverage allowed for this asset. */
   maxLeverage: number;
-  /** If present and true, asset is only live on testnet or delisted etc. */
   onlyIsolated?: boolean;
 }
 
 export interface HLAssetCtx {
-  /** Hourly funding rate (string). Multiply by 8 for 8h or 24 for 24h. */
   funding: string;
-  /** Open interest in base units (not USD). */
   openInterest: string;
-  /** 24h volume in USD. */
   dayNtlVlm: string;
-  /** Current mid price. */
   midPx: string | null;
-  /** Current mark price. */
   markPx: string;
-  /** Premium (mark - index) / index. */
   premium: string | null;
-  /** Index price (spot reference). */
   oraclePx: string;
-  /** Previous day's close. */
   prevDayPx: string;
-  /** Impact prices for a few standard sizes — used for depth estimate. */
   impactPxs?: [string, string] | null;
 }
 
 export type HLMetaAndAssetCtxs = [{ universe: HLAssetMeta[] }, HLAssetCtx[]];
 
 export interface HLL2Level {
-  /** Price as string. */
   px: string;
-  /** Size as string. */
   sz: string;
-  /** Number of orders at this level. */
   n: number;
 }
 
 export interface HLL2Book {
   coin: string;
   time: number;
-  /** [bids (descending px), asks (ascending px)]. */
   levels: [HLL2Level[], HLL2Level[]];
 }
 
 export interface HLUserFill {
   coin: string;
-  /** Fill price. */
   px: string;
-  /** Size (unsigned). */
   sz: string;
-  /** "B" = buy (opens long or closes short), "A" = sell (opens short or closes long). */
   side: "B" | "A";
-  /** ms timestamp. */
   time: number;
-  /** Realized PnL on this fill. */
   closedPnl: string;
-  /** Hash / hash-like fill id. */
   hash: string;
-  /** "Open"/"Close"/"Liquidation"/etc. */
   dir?: string;
-  /** Starting position size in base after this fill. */
   startPosition?: string;
-}
-
-export interface HLVaultDetails {
-  name: string;
-  vaultAddress: string;
-  leader: string;
-  description: string;
-  portfolio: unknown;
-  apr: number;
-  followerState: unknown | null;
-  leaderFraction: number;
-  leaderCommission: number;
-  followers: Array<{ user: string; vaultEquity: string; pnl: string; allTimePnl: string }>;
-  maxDistributable: number;
-  maxWithdrawable: number;
-  /** Total vault equity in USDC. */
-  isClosed: boolean;
-  relationship: { type: string };
-  allowDeposits: boolean;
-  alwaysCloseOnWithdraw: boolean;
 }
 
 export interface HLAssetPosition {
@@ -115,7 +68,6 @@ export interface HLAssetPosition {
     maxLeverage: number;
     positionValue: string;
     returnOnEquity: string;
-    /** Signed size: negative = short. */
     szi: string;
     unrealizedPnl: string;
   };
@@ -140,18 +92,36 @@ export interface HLClearinghouseState {
   withdrawable: string;
 }
 
-/** Mapping coin → current mid price, as strings per HL convention. */
 export type HLAllMids = Record<string, string>;
+
+export interface HLVaultDetails {
+  name: string;
+  vaultAddress: string;
+  leader: string;
+  description: string;
+  portfolio: unknown;
+  apr: number;
+  followerState: unknown | null;
+  leaderFraction: number;
+  leaderCommission: number;
+  followers: Array<{ user: string; vaultEquity: string; pnl: string; allTimePnl: string }>;
+  maxDistributable: number;
+  maxWithdrawable: number;
+  isClosed: boolean;
+  relationship: { type: string };
+  allowDeposits: boolean;
+  alwaysCloseOnWithdraw: boolean;
+}
 
 export interface HLClientOptions {
   baseUrl?: string;
-  /** Request timeout in ms (default 10s). */
   timeoutMs?: number;
 }
 
 /**
  * Thin client for the Hyperliquid public /info POST endpoint.
- * All methods are read-only; no auth needed.
+ * Uses Node 20+ native fetch — avoids the intermittent DNS issues we saw
+ * with undici when resolving binance/bybit/okx in some environments.
  */
 export class HLClient {
   private readonly baseUrl: string;
@@ -163,18 +133,23 @@ export class HLClient {
   }
 
   async info<T = unknown>(body: HLInfoRequest): Promise<T> {
-    const res = await request(`${this.baseUrl}/info`, {
-      method: "POST",
-      headers: { "content-type": "application/json" },
-      body: JSON.stringify(body),
-      bodyTimeout: this.timeoutMs,
-      headersTimeout: this.timeoutMs,
-    });
-    if (res.statusCode !== 200) {
-      const text = await res.body.text();
-      throw new Error(`HL API ${res.statusCode}: ${text}`);
+    const ac = new AbortController();
+    const timer = setTimeout(() => ac.abort(), this.timeoutMs);
+    try {
+      const res = await fetch(`${this.baseUrl}/info`, {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify(body),
+        signal: ac.signal,
+      });
+      if (!res.ok) {
+        const text = await res.text();
+        throw new Error(`HL API ${res.status}: ${text}`);
+      }
+      return (await res.json()) as T;
+    } finally {
+      clearTimeout(timer);
     }
-    return (await res.body.json()) as T;
   }
 
   getAllMids(): Promise<HLAllMids> {
@@ -182,10 +157,7 @@ export class HLClient {
   }
 
   getClearinghouseState(user: string): Promise<HLClearinghouseState> {
-    return this.info<HLClearinghouseState>({
-      type: "clearinghouseState",
-      user,
-    });
+    return this.info<HLClearinghouseState>({ type: "clearinghouseState", user });
   }
 
   getMetaAndAssetCtxs(): Promise<HLMetaAndAssetCtxs> {
@@ -205,10 +177,6 @@ export class HLClient {
   }
 }
 
-/**
- * Well-known HL public vault addresses.
- * HLP is the main Hyperliquidity Provider vault.
- */
 export const HL_VAULTS = {
   HLP: "0xdfc24b077bc1425ad1dea75bcb6f8158e10df303",
 } as const;

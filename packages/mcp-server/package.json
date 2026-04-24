@@ -1,5 +1,5 @@
 {
-  "name": "@cexagent/hyperliquid-radar",
+  "name": "hyperliquid-radar",
   "version": "0.1.0",
   "description": "Agent-native intelligence terminal for Hyperliquid — stdio MCP server",
   "license": "MIT",
@@ -28,7 +28,7 @@
     "start": "node dist/index.js"
   },
   "dependencies": {
-    "@cexagent/core": "workspace:*",
+    "hyperliquid-radar-core": "workspace:*",
     "@modelcontextprotocol/sdk": "^1.0.4",
     "zod": "^3.24.1"
   },
@@ -45,8 +45,8 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/cexagent/hyperliquid-radar.git"
+    "url": "git+https://github.com/duolaAmengweb3/hyperliquid-radar.git"
   },
-  "homepage": "https://hyperliquid-radar.com",
-  "bugs": "https://github.com/cexagent/hyperliquid-radar/issues"
+  "homepage": "https://hyperliquid-radar.vercel.app",
+  "bugs": "https://github.com/duolaAmengweb3/hyperliquid-radar/issues"
 }
