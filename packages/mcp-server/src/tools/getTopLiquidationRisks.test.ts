@@ -8,10 +8,12 @@ describe("getTopLiquidationRisksTool", () => {
     expect(getTopLiquidationRisksTool.inputSchema).toBeDefined();
   });
 
-  it("requires addresses in inputSchema", () => {
+  it("accepts optional addresses (seed fallback)", () => {
     const schema = getTopLiquidationRisksTool.inputSchema as {
       required?: string[];
+      properties?: Record<string, unknown>;
     };
-    expect(schema.required).toContain("addresses");
+    expect(schema.required ?? []).not.toContain("addresses");
+    expect(schema.properties).toHaveProperty("addresses");
   });
 });

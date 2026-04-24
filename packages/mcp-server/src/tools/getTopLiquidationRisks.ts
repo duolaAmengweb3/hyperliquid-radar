@@ -1,20 +1,21 @@
 import { type HLClearinghouseState, HLClient } from "hyperliquid-radar-core";
 import { z } from "zod";
+import { seedAddressStrings } from "../seeds.js";
 import type { ToolDef } from "./index.js";
 
 export const getTopLiquidationRisksTool: ToolDef = {
   name: "get_top_liquidation_risks",
   description:
-    "Scan a list of Hyperliquid wallet addresses and return the N open positions closest to liquidation, sorted by distance × size. " +
-    "Each entry includes address, asset, side, size_usd, leverage, entry_price, liq_price, current_price, distance_to_liq_pct, unrealized_pnl_usd. " +
-    "v1 requires explicit `addresses` (HL has no public 'all positions' endpoint). Future versions will auto-query leaderboard.",
+    "Return the N Hyperliquid positions closest to liquidation, sorted by distance × size. " +
+    "If `addresses` is omitted, falls back to a built-in seed list of public HL traders (small — pass your own for broader coverage). " +
+    "Each entry includes address, asset, side, size_usd, leverage, entry_price, liq_price, current_price, distance_to_liq_pct, unrealized_pnl_usd.",
   inputSchema: {
     type: "object",
     properties: {
       addresses: {
         type: "array",
         items: { type: "string" },
-        description: "Hyperliquid wallet addresses (0x-prefixed) to scan.",
+        description: "Optional list of HL addresses to scan. Defaults to curated seed list.",
       },
       n: {
         type: "number",
@@ -26,12 +27,11 @@ export const getTopLiquidationRisksTool: ToolDef = {
         description: "Optional: limit results to a specific coin like 'BTC', 'ETH', 'HYPE'.",
       },
     },
-    required: ["addresses"],
   },
 };
 
 const inputSchema = z.object({
-  addresses: z.array(z.string().min(1)).min(1).max(100),
+  addresses: z.array(z.string().min(1)).max(200).optional(),
   n: z.number().int().min(1).max(100).default(10),
   asset: z.string().optional(),
 });
@@ -56,7 +56,9 @@ export async function handleGetTopLiquidationRisks(rawArgs: Record<string, unkno
   returned: number;
   positions: LiquidationRisk[];
 }> {
-  const { addresses, n, asset } = inputSchema.parse(rawArgs);
+  const parsed = inputSchema.parse(rawArgs);
+  const addresses = parsed.addresses ?? seedAddressStrings();
+  const { n, asset } = parsed;
   const client = new HLClient();
 
   // Fetch all mid prices once (shared by all positions).

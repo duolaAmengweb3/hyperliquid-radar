@@ -1,6 +1,6 @@
 {
   "name": "hyperliquid-radar-core",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Shared HL / CEX data clients, cache, and types for cexagent products",
   "license": "MIT",
   "type": "module",
