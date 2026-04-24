@@ -351,7 +351,7 @@ code:not(pre code) {
     border-bottom: 1px solid var(--border);
     padding-bottom: 16px;
   }
-  .stat:nth-last-child(-n+2) {
+  .stat:nth-last-child(-n + 2) {
     border-bottom: none;
     padding-bottom: 0;
   }
@@ -404,11 +404,7 @@ code:not(pre code) {
 }
 
 .compare-table tr.highlight {
-  background: linear-gradient(
-    90deg,
-    rgba(110, 234, 205, 0.08) 0%,
-    rgba(124, 154, 255, 0.04) 100%
-  );
+  background: linear-gradient(90deg, rgba(110, 234, 205, 0.08) 0%, rgba(124, 154, 255, 0.04) 100%);
 }
 
 .compare-table tr.highlight td {

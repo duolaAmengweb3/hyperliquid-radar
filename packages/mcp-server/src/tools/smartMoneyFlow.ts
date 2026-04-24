@@ -74,9 +74,26 @@ export async function handleSmartMoneyFlow(rawArgs: Record<string, unknown>): Pr
   longs.sort((a, b) => b.size_usd - a.size_usd);
   shorts.sort((a, b) => b.size_usd - a.size_usd);
   const net = totalLong - totalShort;
-  const ratio = totalShort === 0 ? Number.POSITIVE_INFINITY : totalLong / totalShort;
-  const bias: "long" | "short" | "balanced" =
-    ratio > 1.3 ? "long" : ratio < 0.77 ? "short" : "balanced";
+
+  // Bias / ratio with clean semantics. Infinity is not JSON-safe and confuses agents
+  // (JSON.stringify turns it into `null`), so we emit null + an explicit flag.
+  let ratio: number | null;
+  let bias: "long" | "short" | "balanced" | "all_long" | "all_short" | "no_positions";
+  if (totalLong === 0 && totalShort === 0) {
+    ratio = null;
+    bias = "no_positions";
+  } else if (totalShort === 0) {
+    ratio = null;
+    bias = "all_long";
+  } else if (totalLong === 0) {
+    ratio = 0;
+    bias = "all_short";
+  } else {
+    ratio = totalLong / totalShort;
+    bias = ratio > 1.3 ? "long" : ratio < 0.77 ? "short" : "balanced";
+  }
+
+  const usedSeedFallback = parsed.addresses === undefined;
 
   return {
     asset,
@@ -84,10 +101,15 @@ export async function handleSmartMoneyFlow(rawArgs: Record<string, unknown>): Pr
     total_long_usd: Number(totalLong.toFixed(2)),
     total_short_usd: Number(totalShort.toFixed(2)),
     net_usd: Number(net.toFixed(2)),
-    long_short_ratio: Number(ratio.toFixed(4)),
+    long_short_ratio: ratio === null ? null : Number(ratio.toFixed(4)),
     net_bias: bias,
+    short_side_empty: totalShort === 0,
+    long_side_empty: totalLong === 0,
     top_longs: longs.slice(0, 10),
     top_shorts: shorts.slice(0, 10),
-    note: "Addresses must be provided explicitly. No public HL leaderboard endpoint exists.",
+    seed_mode: usedSeedFallback,
+    note: usedSeedFallback
+      ? "Scanned the built-in seed list (HL public leaderboard snapshot). Pass `addresses` for a custom crowd."
+      : "Scanned the caller-provided address set.",
   };
 }

@@ -2,7 +2,7 @@ import { writeFileSync } from "node:fs";
 import { resolve } from "node:path";
 
 import { HLClient } from "../packages/core/dist/index.js";
-import { tools, toolHandlers } from "../packages/mcp-server/dist/tools/index.js";
+import { toolHandlers, tools } from "../packages/mcp-server/dist/tools/index.js";
 
 const repoRoot = resolve(new URL("..", import.meta.url).pathname);
 const outJson = resolve(repoRoot, "tool-audit-results.json");
@@ -87,7 +87,9 @@ function isFiniteNumber(v) {
 
 function evaluate(toolName, result, ctx) {
   const keys = topKeys(result);
-  const shapeNotes = keys.length ? `top-level keys: ${keys.join(", ")}` : `result: ${brief(result)}`;
+  const shapeNotes = keys.length
+    ? `top-level keys: ${keys.join(", ")}`
+    : `result: ${brief(result)}`;
   let realismNotes = "Looks plausible.";
   let confusing = "";
   let pass = true;
@@ -276,7 +278,10 @@ async function main() {
     ["liquidation_heatmap", { asset: assetWithMid, bucket_pct: 0.5, range_pct: 15 }],
     ["simulate_cascade", { asset: assetWithMid, stress_pct: -5 }],
     ["my_position_risk", { address: chosenAddress }],
-    ["simulate_my_liq_price", { address: chosenAddress, asset: assetWithMid, delta_size_usd: 10000 }],
+    [
+      "simulate_my_liq_price",
+      { address: chosenAddress, asset: assetWithMid, delta_size_usd: 10000 },
+    ],
     ["get_recent_liquidations", { hours: 24, min_size_usd: 10000 }],
     ["whale_pnl_leaderboard", { window: "week", sort_by: "pnl", limit: 10 }],
     ["get_whale_flows", { hours: 24, min_size_usd: 250000 }],

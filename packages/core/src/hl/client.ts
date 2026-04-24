@@ -145,40 +145,61 @@ export interface HLVaultDetails {
 export interface HLClientOptions {
   baseUrl?: string;
   timeoutMs?: number;
+  /** Max retries on 429 / 5xx / network error. Default 2 (so up to 3 attempts total). */
+  maxRetries?: number;
 }
+
+const sleep = (ms: number): Promise<void> => new Promise((r) => setTimeout(r, ms));
 
 /**
  * Thin client for the Hyperliquid public /info POST endpoint.
- * Uses Node 20+ native fetch — avoids the intermittent DNS issues we saw
- * with undici when resolving binance/bybit/okx in some environments.
+ * Uses Node 20+ native fetch. Retries 429 / 5xx with exponential backoff +
+ * jitter so bulk scans (e.g. 60 addresses × userFills) survive upstream
+ * rate-limit bursts instead of silently dropping addresses.
  */
 export class HLClient {
   private readonly baseUrl: string;
   private readonly timeoutMs: number;
+  private readonly maxRetries: number;
 
   constructor(opts: HLClientOptions = {}) {
     this.baseUrl = opts.baseUrl ?? HL_API_BASE;
     this.timeoutMs = opts.timeoutMs ?? 10_000;
+    this.maxRetries = opts.maxRetries ?? 2;
   }
 
   async info<T = unknown>(body: HLInfoRequest): Promise<T> {
-    const ac = new AbortController();
-    const timer = setTimeout(() => ac.abort(), this.timeoutMs);
-    try {
-      const res = await fetch(`${this.baseUrl}/info`, {
-        method: "POST",
-        headers: { "content-type": "application/json" },
-        body: JSON.stringify(body),
-        signal: ac.signal,
-      });
-      if (!res.ok) {
-        const text = await res.text();
-        throw new Error(`HL API ${res.status}: ${text}`);
+    let lastErr: Error | null = null;
+    for (let attempt = 0; attempt <= this.maxRetries; attempt += 1) {
+      const ac = new AbortController();
+      const timer = setTimeout(() => ac.abort(), this.timeoutMs);
+      try {
+        const res = await fetch(`${this.baseUrl}/info`, {
+          method: "POST",
+          headers: { "content-type": "application/json" },
+          body: JSON.stringify(body),
+          signal: ac.signal,
+        });
+        if (res.ok) {
+          return (await res.json()) as T;
+        }
+        const text = await res.text().catch(() => "");
+        const retryable = res.status === 429 || res.status >= 500;
+        lastErr = new Error(`HL API ${res.status}: ${text}`);
+        if (!retryable || attempt === this.maxRetries) throw lastErr;
+      } catch (err) {
+        lastErr = err as Error;
+        if (attempt === this.maxRetries) throw lastErr;
+        // Network-level errors (abort, ECONNRESET, DNS) are retried as well.
+      } finally {
+        clearTimeout(timer);
       }
-      return (await res.json()) as T;
-    } finally {
-      clearTimeout(timer);
+      // Exponential backoff with jitter: 400ms, 900ms, 2000ms …
+      const base = 400 * 2 ** attempt;
+      const jitter = Math.floor(Math.random() * 200);
+      await sleep(base + jitter);
     }
+    throw lastErr ?? new Error("HL API failed with no error");
   }
 
   getAllMids(): Promise<HLAllMids> {

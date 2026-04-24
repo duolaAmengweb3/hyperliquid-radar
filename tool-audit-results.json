@@ -2,11 +2,7 @@
   "context": {
     "chosen_address": "0x0b8aa35c28b7c6ab18f11dc168f437a8a69fd4f8",
     "chosen_asset": "HYPE",
-    "compare_assets": [
-      "BTC",
-      "ETH",
-      "HYPE"
-    ],
+    "compare_assets": ["BTC", "ETH", "HYPE"],
     "audited_at": "2026-04-24T16:01:35.035Z"
   },
   "results": [
@@ -2589,11 +2585,7 @@
       "tool": "compare_perps",
       "pass": true,
       "args": {
-        "assets": [
-          "BTC",
-          "ETH",
-          "HYPE"
-        ]
+        "assets": ["BTC", "ETH", "HYPE"]
       },
       "duration_ms": 532,
       "shape_notes": "top-level keys: count, table",
