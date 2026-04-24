@@ -103,28 +103,28 @@ export const strings: Record<Lang, Strings> = {
   en: {
     nav: { tools: "Tools", install: "Install" },
     hero: {
-      eyebrow: "Part of cexagent · MIT open source",
+      eyebrow: "v0.4.0 · Part of cexagent · MIT open source",
       title: "Your agent now speaks",
       titleAccent: "Hyperliquid.",
-      sub: "Ask Claude, Cursor, Eliza anything about HL — liquidation risks, whale flows, funding divergence, market narrative. No dashboards. No accounts. No API keys. Just talk.",
+      sub: "Ask about liquidation risk, whale flows, funding divergence, market regime — all with zero setup. We pre-seed 60 top HL traders so you can just ask 'are HL whales long BTC?' and get a real answer immediately.",
       cta: "Install in 30 seconds",
-      ctaSub: "stdio MCP · Node 20+ · zero user data",
+      ctaSub: "stdio MCP · Node 20+ · zero user data · zero config",
     },
     features: {
       eyebrow: "Why it exists",
       title: "A terminal built for agents, not humans.",
       items: [
         {
+          title: "Zero config, real answers",
+          desc: "60 top HL traders are pre-seeded from the live public leaderboard (BobbyBigSize, jefe, Auros, 憨巴小龙…). You never have to supply addresses — just ask 'smart money long or short on BTC' and it works.",
+        },
+        {
           title: "22 tools, 4 modules",
-          desc: "Liquidation risk, whales, market structure, narrative — all under one install. No tab-switching to Hyperdash.",
+          desc: "Liquidation risk, whales, market structure, narrative — under one install. Regime classifier, anomaly scanner, historical baselines, funding PnL — not just raw data.",
         },
         {
-          title: "Agent-native protocol",
-          desc: "MCP stdio server. Works in Claude Desktop, Cursor, Eliza out of the box. Paste a config, restart, talk.",
-        },
-        {
-          title: "Zero data collected",
-          desc: "No accounts. No login. No API keys. Queries go straight from your agent to Hyperliquid's public API — nothing through our servers.",
+          title: "Zero backend, zero leak",
+          desc: "MCP stdio server runs inside your agent. Queries go straight to HL's public API — nothing through our servers. No accounts, no tokens, no telemetry.",
         },
       ],
     },
@@ -136,15 +136,13 @@ export const strings: Record<Lang, Strings> = {
     },
     examples: {
       eyebrow: "Example prompts",
-      title: "Say what you mean. The tool call is the agent's problem.",
+      title: "Just talk. No addresses, no config.",
       items: [
+        { q: "Are HL whales long or short BTC right now?", tool: "smart_money_flow" },
         { q: "What's anomalous on HL right now?", tool: "detect_anomalies" },
         { q: "Top 20 traders on HL this week by PnL.", tool: "whale_pnl_leaderboard" },
-        {
-          q: "Is BTC funding extreme vs its 30-day baseline?",
-          tool: "historical_context",
-        },
-        { q: "How much funding did 0xabc… collect this week?", tool: "get_funding_pnl" },
+        { q: "If BTC drops 5% how much gets liquidated?", tool: "simulate_cascade" },
+        { q: "Is BTC funding extreme vs its 30-day baseline?", tool: "historical_context" },
         { q: "Give me a trader's read on HL market structure.", tool: "explain_market_structure" },
       ],
     },
@@ -171,28 +169,28 @@ export const strings: Record<Lang, Strings> = {
   zh: {
     nav: { tools: "工具", install: "安装" },
     hero: {
-      eyebrow: "cexagent 矩阵 · MIT 开源",
+      eyebrow: "v0.4.0 · cexagent 矩阵 · MIT 开源",
       title: "让你的 agent 真正会用",
       titleAccent: "Hyperliquid。",
-      sub: "让 Claude、Cursor、Eliza 直接回答 HL 的一切——清算风险、鲸鱼流、funding 偏差、市场叙事。不用开网页、不用注册、不用 API key,一句话就行。",
+      sub: "清算风险、鲸鱼仓位、funding 偏差、市场局面——零配置即用。我们内置了 HL 公开 leaderboard 前 60 位真实顶级交易员的地址,所以你可以直接问「HL 大佬现在多还是空 BTC」,立即有答案。",
       cta: "30 秒装好",
-      ctaSub: "stdio MCP · Node 20+ · 零用户数据",
+      ctaSub: "stdio MCP · Node 20+ · 零用户数据 · 零配置",
     },
     features: {
       eyebrow: "为什么做它",
       title: "为 agent 而生的终端,不是为人。",
       items: [
         {
+          title: "零配置,直接出答案",
+          desc: "内置 60 位 HL 公开 leaderboard 顶级交易员(BobbyBigSize / jefe / Auros / 憨巴小龙…)。用户不用提供任何地址——直接问「大户多头还是空头」就行。",
+        },
+        {
           title: "22 个工具 4 个模块",
-          desc: "清算风险、鲸鱼、市场结构、叙事——一次装完。再也不用开 Hyperdash 网页。",
+          desc: "清算风险、鲸鱼、市场结构、叙事——一次装完。包含 regime 分类器、异常扫描器、历史基线对比、funding PnL 统计,不只是查数据。",
         },
         {
-          title: "Agent-native 协议",
-          desc: "MCP stdio 服务。Claude Desktop / Cursor / Eliza 开箱即用。粘一行 config、重启、开始对话。",
-        },
-        {
-          title: "零数据收集",
-          desc: "不注册、不登录、不收 API key。请求直接从你 agent 所在机器打 HL 公开接口,不过我们任何服务器。",
+          title: "零后端零泄漏",
+          desc: "MCP stdio server 跑在你 agent 的子进程里。请求直接打 HL 公开 API,不经过我们任何服务器。不注册、不收 token、无埋点。",
         },
       ],
     },
@@ -204,12 +202,13 @@ export const strings: Record<Lang, Strings> = {
     },
     examples: {
       eyebrow: "对话示例",
-      title: "想问什么就问什么。调哪个工具是 agent 的事。",
+      title: "直接说。不用地址,不用参数。",
       items: [
+        { q: "HL 大佬现在多还是空 BTC?", tool: "smart_money_flow" },
         { q: "HL 现在有什么异常?", tool: "detect_anomalies" },
         { q: "本周 HL PnL 前 20 的交易员是谁?", tool: "whale_pnl_leaderboard" },
+        { q: "BTC 瞬间跌 5% 会爆掉多少仓?", tool: "simulate_cascade" },
         { q: "BTC 当前 funding 相比过去 30 天算不算极端?", tool: "historical_context" },
-        { q: "0xabc... 这周收到多少 funding?", tool: "get_funding_pnl" },
         { q: "用交易员的视角讲讲现在的 HL 市场。", tool: "explain_market_structure" },
       ],
     },
