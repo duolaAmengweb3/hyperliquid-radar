@@ -58,6 +58,35 @@ export interface HLUserFill {
   startPosition?: string;
 }
 
+export interface HLCandle {
+  t: number;
+  T: number;
+  s: string;
+  i: string;
+  o: string;
+  c: string;
+  h: string;
+  l: string;
+  v: string;
+  n: number;
+}
+
+export interface HLFundingEvent {
+  time: number;
+  coin: string;
+  usdc: string;
+  szi: string;
+  fundingRate: string;
+}
+
+export interface HLLeaderboardRow {
+  ethAddress: string;
+  accountValue: string;
+  windowPerformances: Array<[string, { pnl: string; roi: string; vlm: string }]>;
+  prize?: number;
+  displayName?: string | null;
+}
+
 export interface HLAssetPosition {
   position: {
     coin: string;
@@ -174,6 +203,57 @@ export class HLClient {
 
   getUserFills(user: string): Promise<HLUserFill[]> {
     return this.info<HLUserFill[]>({ type: "userFills", user });
+  }
+
+  getUserFunding(user: string, startTimeMs: number): Promise<HLFundingEvent[]> {
+    return this.info<HLFundingEvent[]>({
+      type: "userFunding",
+      user,
+      startTime: startTimeMs,
+    });
+  }
+
+  getCandles(
+    coin: string,
+    interval: "1m" | "5m" | "15m" | "1h" | "4h" | "1d" | "1w",
+    startTimeMs: number,
+    endTimeMs: number,
+  ): Promise<HLCandle[]> {
+    return this.info<HLCandle[]>({
+      type: "candleSnapshot",
+      req: { coin, interval, startTime: startTimeMs, endTime: endTimeMs },
+    });
+  }
+
+  /**
+   * Fetch HL public leaderboard. Uses stats-data.hyperliquid.xyz which is
+   * served with browser-origin CORS; server-side fetches from non-browser
+   * clients are sometimes blocked at the edge. We send browser-like headers.
+   * Returns raw rows; caller filters by window / sort.
+   */
+  async getLeaderboard(): Promise<HLLeaderboardRow[]> {
+    const ac = new AbortController();
+    const timer = setTimeout(() => ac.abort(), this.timeoutMs * 2);
+    try {
+      const res = await fetch("https://stats-data.hyperliquid.xyz/Mainnet/leaderboard", {
+        method: "GET",
+        headers: {
+          "User-Agent":
+            "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+          Referer: "https://app.hyperliquid.xyz/",
+          Origin: "https://app.hyperliquid.xyz",
+          Accept: "application/json",
+        },
+        signal: ac.signal,
+      });
+      if (!res.ok) {
+        throw new Error(`HL leaderboard ${res.status}`);
+      }
+      const data = (await res.json()) as { leaderboardRows?: HLLeaderboardRow[] };
+      return data.leaderboardRows ?? [];
+    } finally {
+      clearTimeout(timer);
+    }
   }
 }
 

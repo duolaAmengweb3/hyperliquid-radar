@@ -57,19 +57,20 @@ const commonModules: Module[] = [
   {
     letter: "B",
     name: "",
-    count: 5,
+    count: 6,
     tools: [
+      { name: "whale_pnl_leaderboard", ready: true },
       { name: "get_whale_flows", ready: true },
       { name: "address_position_history", ready: true },
       { name: "smart_money_flow", ready: true },
+      { name: "get_funding_pnl", ready: true },
       { name: "new_whale_entries", ready: false },
-      { name: "whale_pnl_leaderboard", ready: false },
     ],
   },
   {
     letter: "C",
     name: "",
-    count: 7,
+    count: 9,
     tools: [
       { name: "get_funding_divergence", ready: true },
       { name: "asset_snapshot", ready: true },
@@ -77,6 +78,8 @@ const commonModules: Module[] = [
       { name: "hlp_metrics", ready: true },
       { name: "orderbook_imbalance", ready: true },
       { name: "compare_perps", ready: true },
+      { name: "historical_context", ready: true },
+      { name: "detect_anomalies", ready: true },
       { name: "insurance_fund_status", ready: false },
     ],
   },
@@ -112,7 +115,7 @@ export const strings: Record<Lang, Strings> = {
       title: "A terminal built for agents, not humans.",
       items: [
         {
-          title: "21 tools, 4 modules",
+          title: "22 tools, 4 modules",
           desc: "Liquidation risk, whales, market structure, narrative — all under one install. No tab-switching to Hyperdash.",
         },
         {
@@ -135,20 +138,14 @@ export const strings: Record<Lang, Strings> = {
       eyebrow: "Example prompts",
       title: "Say what you mean. The tool call is the agent's problem.",
       items: [
+        { q: "What's anomalous on HL right now?", tool: "detect_anomalies" },
+        { q: "Top 20 traders on HL this week by PnL.", tool: "whale_pnl_leaderboard" },
         {
-          q: "Who are HL's top 10 most-at-risk positions right now?",
-          tool: "get_top_liquidation_risks",
+          q: "Is BTC funding extreme vs its 30-day baseline?",
+          tool: "historical_context",
         },
-        {
-          q: "What's the BTC funding gap between HL, Binance, Bybit and OKX?",
-          tool: "get_funding_divergence",
-        },
-        { q: "Give me a snapshot of HYPE — funding, OI, 24h move.", tool: "asset_snapshot" },
-        {
-          q: "List the 20 perps with the most extreme funding right now.",
-          tool: "get_all_asset_ctxs",
-        },
-        { q: "Give me today's HL briefing.", tool: "daily_briefing" },
+        { q: "How much funding did 0xabc… collect this week?", tool: "get_funding_pnl" },
+        { q: "Give me a trader's read on HL market structure.", tool: "explain_market_structure" },
       ],
     },
     install: {
@@ -186,7 +183,7 @@ export const strings: Record<Lang, Strings> = {
       title: "为 agent 而生的终端,不是为人。",
       items: [
         {
-          title: "21 个工具 4 个模块",
+          title: "22 个工具 4 个模块",
           desc: "清算风险、鲸鱼、市场结构、叙事——一次装完。再也不用开 Hyperdash 网页。",
         },
         {
@@ -209,14 +206,11 @@ export const strings: Record<Lang, Strings> = {
       eyebrow: "对话示例",
       title: "想问什么就问什么。调哪个工具是 agent 的事。",
       items: [
-        { q: "HL 现在最危险的 10 个仓位是谁?", tool: "get_top_liquidation_risks" },
-        {
-          q: "BTC 在 HL 和 Binance、Bybit、OKX 之间的 funding 差多少?",
-          tool: "get_funding_divergence",
-        },
-        { q: "给我看一下 HYPE 的情况 —— funding、OI、24h 涨跌。", tool: "asset_snapshot" },
-        { q: "列出现在 funding 最极端的 20 个 perp。", tool: "get_all_asset_ctxs" },
-        { q: "给我今天的 HL 日报。", tool: "daily_briefing" },
+        { q: "HL 现在有什么异常?", tool: "detect_anomalies" },
+        { q: "本周 HL PnL 前 20 的交易员是谁?", tool: "whale_pnl_leaderboard" },
+        { q: "BTC 当前 funding 相比过去 30 天算不算极端?", tool: "historical_context" },
+        { q: "0xabc... 这周收到多少 funding?", tool: "get_funding_pnl" },
+        { q: "用交易员的视角讲讲现在的 HL 市场。", tool: "explain_market_structure" },
       ],
     },
     install: {
