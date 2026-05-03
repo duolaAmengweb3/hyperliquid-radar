@@ -73,6 +73,10 @@ pnpm test
 Every tool call goes directly from your machine to Hyperliquid's public API. We
 run no backend. No accounts, no login, no telemetry. MIT license.
 
+## See also
+
+For real-time Solana KOL & wallet alpha (KOLs buy/sell + entry quality + position size anomaly), see [solana-alpha-tracker](https://github.com/duolaAmengweb3/solana-alpha-tracker) — same matrix, MIT, $0/month.
+
 ## License
 
 MIT. See [LICENSE](./LICENSE).
